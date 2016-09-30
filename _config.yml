@@ -1,12 +1,13 @@
 # Site settings
-title:
-email:
+title: Qi's Homepage
+email: z_q114@hotmail.com
 description: > # this means to ignore newlines until "baseurl:"
-baseurl: "" # the subpath of your site, e.g. /blog/
+baseurl: "/site2" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
 
-twitter_username:
-github_username:
+phone_number: 18510624929
+github_username: zouqi1987
 
 # Build settings
 markdown: kramdown
+permalink: pretty
