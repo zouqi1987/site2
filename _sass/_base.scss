@@ -229,9 +229,8 @@ header {
     margin: 0 auto;
     .portfolio-box-caption {
         color: white;
-        opacity: 0;
+        opacity: 1;
         display: block;
-        background: rgba( $theme-primary, .9 );
         position: absolute;
         bottom: 0;
         text-align: center;
@@ -261,6 +260,7 @@ header {
     }
     &:hover {
         .portfolio-box-caption {
+            background: rgba( $theme-primary, .9 );
             opacity: 1;
         }
     }

@@ -181,9 +181,8 @@ header {
   margin: 0 auto; }
   .portfolio-box .portfolio-box-caption {
     color: white;
-    opacity: 0;
+    opacity: 1;
     display: block;
-    background: rgba(240, 95, 64, 0.9);
     position: absolute;
     bottom: 0;
     text-align: center;
@@ -209,6 +208,7 @@ header {
       .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-name {
         font-size: 18px; }
   .portfolio-box:hover .portfolio-box-caption {
+    background: rgba(240, 95, 64, 0.9);
     opacity: 1; }
   @media (min-width: 768px) {
     .portfolio-box .portfolio-box-caption .portfolio-box-caption-content .project-category {

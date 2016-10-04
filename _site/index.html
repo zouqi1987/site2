@@ -74,10 +74,20 @@
     <!-- /.container-fluid -->
 </nav>
 
-  
-<header>
+  <!-- Fix the slider on mobile device. Fucking Yeah!!!! -->
+<style>
+.carousel-bg .carousel-inner .item {
+ background-color: darkslategrey;
+ background-size: cover;
+ background-position: center;
+ min-height: 650px;
+}
+</style>
+
+
+
 <div class="containter">
-	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-pause="false">
+	<div id="carousel-example-generic" class="carousel slide carousel-bg" data-ride="carousel" data-pause="false">
      	<ol class="carousel-indicators">
      		<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
          	<li data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -87,24 +97,12 @@
          	<li data-target="#carousel-example-generic" data-slide-to="5"></li>
        </ol>
     <div class="carousel-inner" style="height: 650px;" role="listbox">
-    	<div class="item active">
-        	<img src="./img/warm1.jpeg" alt="0" class="img-responsive">
-        </div>
-        <div class="item">
-           	<img src="./img/warm2.jpeg" alt="1" class="img-responsive">
-        </div>
-        <div class="item">
-           	<img src="./img/warm3.jpeg" alt="2" class="img-responsive">
-        </div>
-        <div class="item">
-           	<img src="./img/warm4.jpeg" alt="3" class="img-responsive">
-        </div>
-        <div class="item">
-           	<img src="./img/warm5.jpeg" alt="4" class="img-responsive">
-        </div>
-        <div class="item">
-           	<img src="./img/warm6.jpg" alt="5" class="img-responsive">
-        </div>
+    	<div class="item active" style="background-image: url(./img/warm1.jpeg);"></div>
+        <div class="item" style="background-image: url(./img/warm2.jpeg);"></div>
+        <div class="item" style="background-image: url(./img/warm3.jpeg);"></div>
+        <div class="item" style="background-image: url(./img/warm4.jpeg);"></div>
+        <div class="item" style="background-image: url(./img/warm5.jpeg);"></div>
+        <div class="item" style="background-image: url(./img/warm6.jpg);"></div>
         <div class="carousel-caption" style="top: 200px;">
         	<h1>Qi's Homepage</h1>
             <hr>
@@ -114,7 +112,7 @@
      </div>
  	</div>
 </div>
-</header>
+
 
 
 
@@ -289,9 +287,9 @@
                 <p>准备好开始建立自己的网站了么? 准备好开始书写交互报告了么？很好! 那就电邮我吧!</p>
             </div>
         <div class="col-lg-2 col-lg-offset-2 text-center">
-                <a href="tel:18510624929">
-                <i class="fa fa-phone fa-3x wow bounceIn" data-wow-delay=".1s"></i>
-                <p>18510624929</p>
+                <a href="https://www.linkedin.com/in/qi-zou-30956783">
+                <i class="fa fa-linkedin fa-3x wow bounceIn" data-wow-delay=".1s"></i>
+                <p>linkedin</p>
             </a>
         </div>
         <div class="col-lg-2 col-lg-offset-1 text-center">
