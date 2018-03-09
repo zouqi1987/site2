@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>A Minimal Wiki Example</title>
+  <meta name="description" content="This is a minimal example of wiki using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="A Minimal Wiki Example" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="This is a minimal example of wiki using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="A Minimal Wiki Example" />
+  
+  <meta name="twitter:description" content="This is a minimal example of wiki using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  
+
+<meta name="author" content="Qi Zou">
+
+
+<meta name="date" content="2018-03-09">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="topspeed.html">
+<link rel="next" href="applications.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="topspeed.html"><a href="topspeed.html"><i class="fa fa-check"></i><b>3</b> Topspeed</a><ul>
+<li class="chapter" data-level="3.1" data-path="topspeed.html"><a href="topspeed.html#section-3.1"><i class="fa fa-check"></i><b>3.1</b> 极速版数据仓库</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="topspeed.html"><a href="topspeed.html#section-3.1.1"><i class="fa fa-check"></i><b>3.1.1</b> 极速版打码日志</a></li>
+<li class="chapter" data-level="3.1.2" data-path="topspeed.html"><a href="topspeed.html#section-3.1.2"><i class="fa fa-check"></i><b>3.1.2</b> 极速版月活表(每日全量表)</a></li>
+<li class="chapter" data-level="3.1.3" data-path="topspeed.html"><a href="topspeed.html#section-3.1.3"><i class="fa fa-check"></i><b>3.1.3</b> 极速版访客登录表(每日全量表)</a></li>
+<li class="chapter" data-level="3.1.4" data-path="topspeed.html"><a href="topspeed.html#section-3.1.4"><i class="fa fa-check"></i><b>3.1.4</b> 极速版访客登录表(每日增量表)</a></li>
+<li class="chapter" data-level="3.1.5" data-path="topspeed.html"><a href="topspeed.html#section-3.1.5"><i class="fa fa-check"></i><b>3.1.5</b> 用户类型表（每天增量表）</a></li>
+<li class="chapter" data-level="3.1.6" data-path="topspeed.html"><a href="topspeed.html#section-3.1.6"><i class="fa fa-check"></i><b>3.1.6</b> 极速版用户注册信息表(每日增量表)</a></li>
+<li class="chapter" data-level="3.1.7" data-path="topspeed.html"><a href="topspeed.html#section-3.1.7"><i class="fa fa-check"></i><b>3.1.7</b> 建表信息</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="topspeed.html"><a href="topspeed.html#section-3.2"><i class="fa fa-check"></i><b>3.2</b> 极速版邮件调度</a></li>
+<li class="chapter" data-level="3.3" data-path="topspeed.html"><a href="topspeed.html#fid"><i class="fa fa-check"></i><b>3.3</b> 极速版FID</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="topspeed.html"><a href="topspeed.html#section-3.3.1"><i class="fa fa-check"></i><b>3.3.1</b> 关注</a></li>
+<li class="chapter" data-level="3.3.2" data-path="topspeed.html"><a href="topspeed.html#section-3.3.2"><i class="fa fa-check"></i><b>3.3.2</b> 热门</a></li>
+<li class="chapter" data-level="3.3.3" data-path="topspeed.html"><a href="topspeed.html#section-3.3.3"><i class="fa fa-check"></i><b>3.3.3</b> 视频</a></li>
+<li class="chapter" data-level="3.3.4" data-path="topspeed.html"><a href="topspeed.html#section-3.3.4"><i class="fa fa-check"></i><b>3.3.4</b> 页面</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="topspeed.html"><a href="topspeed.html#action"><i class="fa fa-check"></i><b>3.4</b> 极速版action</a></li>
+<li class="chapter" data-level="3.5" data-path="topspeed.html"><a href="topspeed.html#section-3.5"><i class="fa fa-check"></i><b>3.5</b> 极速版互动（转评赞）</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="freq-sql.html"><a href="freq-sql.html"><i class="fa fa-check"></i><b>4</b> Freq Sql</a><ul>
+<li class="chapter" data-level="4.1" data-path="freq-sql.html"><a href="freq-sql.html#push"><i class="fa fa-check"></i><b>4.1</b> push下发条数</a></li>
+<li class="chapter" data-level="4.2" data-path="freq-sql.html"><a href="freq-sql.html#dau"><i class="fa fa-check"></i><b>4.2</b> DAU</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="freq-sql.html"><a href="freq-sql.html#dau-1"><i class="fa fa-check"></i><b>4.2.1</b> DAU</a></li>
+<li class="chapter" data-level="4.2.2" data-path="freq-sql.html"><a href="freq-sql.html#dau-"><i class="fa fa-check"></i><b>4.2.2</b> Dau 补全脚本</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="freq-sql.html"><a href="freq-sql.html#section-4.3"><i class="fa fa-check"></i><b>4.3</b> 点击数</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="freq-sql.html"><a href="freq-sql.html#feed"><i class="fa fa-check"></i><b>4.3.1</b> 主feed的互动数</a></li>
+<li class="chapter" data-level="4.3.2" data-path="freq-sql.html"><a href="freq-sql.html#section-4.3.2"><i class="fa fa-check"></i><b>4.3.2</b> 热门微博的互动数</a></li>
+<li class="chapter" data-level="4.3.3" data-path="freq-sql.html"><a href="freq-sql.html#section-4.3.3"><i class="fa fa-check"></i><b>4.3.3</b> 热门微博的点击数</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="freq-sql.html"><a href="freq-sql.html#luicode"><i class="fa fa-check"></i><b>4.4</b> 首次打开按luicode</a></li>
+<li class="chapter" data-level="4.5" data-path="freq-sql.html"><a href="freq-sql.html#section-4.5"><i class="fa fa-check"></i><b>4.5</b> 在线时长</a></li>
+<li class="chapter" data-level="4.6" data-path="freq-sql.html"><a href="freq-sql.html#push"><i class="fa fa-check"></i><b>4.6</b> 可push库地理位置</a></li>
+<li class="chapter" data-level="4.7" data-path="freq-sql.html"><a href="freq-sql.html#section-4.7"><i class="fa fa-check"></i><b>4.7</b> 用户类型</a></li>
+<li class="chapter" data-level="4.8" data-path="freq-sql.html"><a href="freq-sql.html#section-4.8"><i class="fa fa-check"></i><b>4.8</b> 发博转发评论<font color=red>中位数</font></a></li>
+<li class="chapter" data-level="4.9" data-path="freq-sql.html"><a href="freq-sql.html#section-4.9"><i class="fa fa-check"></i><b>4.9</b> 主要行为</a></li>
+<li class="chapter" data-level="4.10" data-path="freq-sql.html"><a href="freq-sql.html#section-4.10"><i class="fa fa-check"></i><b>4.10</b> 曝光</a></li>
+<li class="chapter" data-level="4.11" data-path="freq-sql.html"><a href="freq-sql.html#section-4.11"><i class="fa fa-check"></i><b>4.11</b> 点赞分享<font color=red>中位数</font></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
+<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Wiki Example</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="freq-sql" class="section level1">
+<h1><span class="header-section-number">Chapter 4</span> Freq Sql</h1>
+<div id="push" class="section level2">
+<h2><span class="header-section-number">4.1</span> push下发条数</h2>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> <span class="fu">count</span>(t2.uid)
+<span class="kw">FROM</span>
+  (<span class="kw">SELECT</span> <span class="fu">uid</span>
+   <span class="kw">FROM</span> ods_wls_pushable_devicelist
+   <span class="kw">WHERE</span> dt = <span class="st">&#39;20171214&#39;</span>
+     <span class="kw">AND</span> device_type = <span class="st">&#39;4&#39;</span>
+     <span class="kw">AND</span> chnl_brand <span class="kw">IN</span> (<span class="st">&#39;110&#39;</span>,
+                        <span class="st">&#39;111&#39;</span>)
+   <span class="kw">GROUP</span> <span class="kw">BY</span> <span class="fu">uid</span>) t2
+<span class="kw">LEFT</span> <span class="kw">JOIN</span> (
+<span class="kw">SELECT</span> <span class="fu">uid</span>,
+       luicode
+<span class="kw">FROM</span>
+  (<span class="kw">SELECT</span> luicode,
+          sid
+   <span class="kw">FROM</span> ods_wls_push_ug_edm_content
+   <span class="kw">WHERE</span> dt = <span class="st">&#39;20171214&#39;</span>)b
+<span class="kw">INNER</span> <span class="kw">JOIN</span>
+  (<span class="kw">SELECT</span> ltype <span class="kw">AS</span> sid ,
+          <span class="fu">uid</span>
+   <span class="kw">FROM</span> ods_wls_push_ug_edm_send
+   <span class="kw">WHERE</span> dt =<span class="st">&#39;20171214&#39;</span>)c <span class="kw">ON</span> b.sid = c.sid
+<span class="kw">UNION</span> <span class="kw">ALL</span>
+<span class="kw">SELECT</span> <span class="fu">uid</span>,
+       luicode
+<span class="kw">FROM</span>
+  (<span class="kw">SELECT</span> <span class="fu">uid</span>,
+          sid
+   <span class="kw">FROM</span> ods_wls_push_op_send
+   <span class="kw">WHERE</span> dt =<span class="st">&#39;20171214&#39;</span>)b
+<span class="kw">INNER</span> <span class="kw">JOIN</span>
+  (<span class="kw">SELECT</span> uicode <span class="kw">AS</span> luicode,
+          sid
+   <span class="kw">FROM</span> ods_wls_push_content
+   <span class="kw">WHERE</span> dt =<span class="st">&#39;20171214&#39;</span>)c <span class="kw">ON</span> b.sid = c.sid) t3 
+<span class="kw">ON</span> t2.uid=t3.uid
+<span class="kw">WHERE</span> t3.uid <span class="kw">is</span> <span class="kw">not</span> <span class="kw">null</span></code></pre></div>
+</div>
+<div id="dau" class="section level2">
+<h2><span class="header-section-number">4.2</span> DAU</h2>
+<div id="dau-1" class="section level3">
+<h3><span class="header-section-number">4.2.1</span> DAU</h3>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> <span class="fu">count</span>(a.uid)
+<span class="kw">FROM</span>
+    (<span class="kw">select</span> w1.guest_id <span class="kw">as</span> <span class="fu">uid</span>
+                <span class="kw">from</span>
+                (<span class="kw">select</span> guest_id
+                    <span class="kw">from</span> ods_wls_guest_login
+                    <span class="kw">where</span> dt=<span class="st">&#39;20171205&#39;</span> <span class="kw">and</span> wfrom <span class="kw">like</span> <span class="st">&#39;10%&#39;</span> <span class="kw">and</span> ((wm&lt;&gt;<span class="st">&#39;8605_2003&#39;</span> <span class="kw">and</span> wm&lt;&gt;<span class="st">&#39;4209_8001&#39;</span> <span class="kw">and</span> wm&lt;&gt;<span class="st">&#39;90027_90052&#39;</span>) <span class="kw">or</span> wm <span class="kw">is</span> <span class="kw">null</span>)
+                    <span class="kw">group</span> <span class="kw">by</span> guest_id
+                )w1
+            <span class="kw">left</span> <span class="kw">outer</span> <span class="kw">join</span>
+            (<span class="kw">select</span> guest_id
+                <span class="kw">from</span> ods_wls_guest_login
+                <span class="kw">where</span> dt=<span class="st">&#39;20171205&#39;</span>
+                <span class="kw">and</span> wfrom <span class="kw">like</span> <span class="st">&#39;10%&#39;</span>
+                <span class="kw">and</span> ((wm&lt;&gt;<span class="st">&#39;8605_2003&#39;</span> <span class="kw">and</span> wm&lt;&gt;<span class="st">&#39;4209_8001&#39;</span> <span class="kw">and</span> wm&lt;&gt;<span class="st">&#39;90027_90052&#39;</span>) <span class="kw">or</span> wm <span class="kw">is</span> <span class="kw">null</span>)
+                <span class="kw">and</span> mode=<span class="st">&#39;TRANS&#39;</span>
+                <span class="kw">group</span> <span class="kw">by</span> guest_id
+                )j1
+            <span class="kw">on</span> w1.guest_id=j1.guest_id
+            <span class="kw">where</span> j1.guest_id <span class="kw">is</span> <span class="kw">null</span>
+     <span class="kw">UNION</span> <span class="kw">ALL</span> 
+     <span class="kw">SELECT</span> <span class="fu">uid</span>
+     <span class="kw">FROM</span> mds_bhv_login_day
+     <span class="kw">WHERE</span> dt=<span class="st">&#39;20171205&#39;</span>
+         <span class="kw">AND</span> login_type=<span class="st">&#39;wap_client&#39;</span>
+         <span class="kw">AND</span> <span class="fu">length</span>(<span class="fu">uid</span>)&lt;=<span class="dv">10</span>
+     <span class="kw">GROUP</span> <span class="kw">BY</span> <span class="fu">uid</span>) a</code></pre></div>
+</div>
+<div id="dau-" class="section level3">
+<h3><span class="header-section-number">4.2.2</span> Dau 补全脚本</h3>
+<pre class="shell"><code>#!/bin/sh
+
+dt=&#39;20171101&#39;
+end=&#39;20180122&#39;
+part=`hive -e &quot;show partitions tmp_ug_main_dau partition(dt=&#39;${dt}&#39;)&quot;`
+
+
+while (( ${dt} &lt; ${end} )) 
+do
+    if [ -z ${part} ]
+    then
+        #statements
+        hive -e&quot;
+        insert overwrite table tmp_ug_main_dau partition(dt=&#39;${dt}&#39;)
+        SELECT count(a.uid)
+        FROM
+          (SELECT w1.guest_id AS uid
+           FROM
+             (SELECT guest_id
+              FROM ods_wls_guest_login
+              WHERE dt=&#39;${dt}&#39;
+                AND wfrom LIKE &#39;10%&#39;
+                AND ((wm&lt;&gt;&#39;8605_2003&#39;
+                      AND wm&lt;&gt;&#39;4209_8001&#39;
+                      AND wm&lt;&gt;&#39;90027_90052&#39;)
+                     OR wm IS NULL)
+              GROUP BY guest_id )w1
+           LEFT OUTER JOIN
+             (SELECT guest_id
+              FROM ods_wls_guest_login
+              WHERE dt=&#39;${dt}&#39;
+                AND wfrom LIKE &#39;10%&#39;
+                AND ((wm&lt;&gt;&#39;8605_2003&#39;
+                      AND wm&lt;&gt;&#39;4209_8001&#39;
+                      AND wm&lt;&gt;&#39;90027_90052&#39;)
+                     OR wm IS NULL)
+                AND MODE=&#39;TRANS&#39;
+              GROUP BY guest_id )j1 ON w1.guest_id=j1.guest_id
+           WHERE j1.guest_id IS NULL
+           UNION ALL SELECT uid
+           FROM mds_bhv_login_day
+           WHERE dt=&#39;${dt}&#39;
+             AND login_type=&#39;wap_client&#39;
+             AND length(uid)&lt;=10
+           GROUP BY uid) a
+    &quot;
+    fi
+    
+    dt=`date -d &quot;${dt} +1 day&quot; +%Y%m%d`
+    part=`hive -e &quot;show partitions tmp_ug_main_dau partition(dt=&#39;${dt}&#39;)&quot;`
+done
+</code></pre>
+</div>
+</div>
+<div id="section-4.3" class="section level2">
+<h2><span class="header-section-number">4.3</span> 点击数</h2>
+<div id="feed" class="section level3">
+<h3><span class="header-section-number">4.3.1</span> 主feed的互动数</h3>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> x.dt,
+       <span class="fu">count</span>(<span class="dv">1</span>) <span class="kw">AS</span> hdl
+<span class="kw">FROM</span>
+    (<span class="kw">SELECT</span> dt,
+            <span class="fu">uid</span>,
+            oper_src_id,
+            opp_uid <span class="kw">AS</span> bdid
+     <span class="kw">FROM</span> mds_bhv_pubblog
+     <span class="kw">WHERE</span> dt=<span class="st">&#39;{dt}&#39;</span>
+         <span class="kw">AND</span> is_transmit=<span class="st">&#39;1&#39;</span>
+         <span class="kw">AND</span> (extend <span class="kw">LIKE</span> <span class="st">&#39;%loc:v6_content_home%&#39;</span>
+              <span class="kw">OR</span> extend <span class="kw">LIKE</span> <span class="st">&#39;%loc:home%&#39;</span>
+              <span class="kw">OR</span> extend <span class="kw">LIKE</span> <span class="st">&#39;%fromlog:10000%&#39;</span>
+              <span class="kw">OR</span> extend <span class="kw">LIKE</span> <span class="st">&#39;%fromlog:10001%&#39;</span>)
+     <span class="kw">UNION</span> <span class="kw">ALL</span> <span class="kw">SELECT</span> dt,
+                      <span class="fu">uid</span>,
+                      oper_src_id,
+                      object_owner <span class="kw">AS</span> bdid
+     <span class="kw">FROM</span> mds_bhv_like
+     <span class="kw">WHERE</span> dt=<span class="st">&#39;{dt}&#39;</span>
+         <span class="kw">AND</span> MODE=<span class="st">&#39;1&#39;</span>
+         <span class="kw">AND</span> object_type=<span class="st">&#39;status&#39;</span>
+         <span class="kw">AND</span> (extend <span class="kw">LIKE</span> <span class="st">&#39;%loc:v6_content_home%&#39;</span>
+              <span class="kw">OR</span> extend <span class="kw">LIKE</span> <span class="st">&#39;%loc:home%&#39;</span>
+              <span class="kw">OR</span> extend <span class="kw">LIKE</span> <span class="st">&#39;%fromlog:10000%&#39;</span>
+              <span class="kw">OR</span> extend <span class="kw">LIKE</span> <span class="st">&#39;%fromlog:10001%&#39;</span>)
+     <span class="kw">UNION</span> <span class="kw">ALL</span> <span class="kw">SELECT</span> dt,
+                      <span class="fu">uid</span>,
+                      oper_src_id,
+                      author_uid <span class="kw">AS</span> bdid
+     <span class="kw">FROM</span> mds_bhv_cmtblog
+     <span class="kw">WHERE</span> dt=<span class="st">&#39;{dt}&#39;</span>
+         <span class="kw">AND</span> (extend <span class="kw">LIKE</span> <span class="st">&#39;%loc:v6_content_home%&#39;</span>
+              <span class="kw">OR</span> extend <span class="kw">LIKE</span> <span class="st">&#39;%loc:home%&#39;</span>
+              <span class="kw">OR</span> extend <span class="kw">LIKE</span> <span class="st">&#39;%fromlog:10000%&#39;</span>
+              <span class="kw">OR</span> extend <span class="kw">LIKE</span> <span class="st">&#39;%fromlog:10001%&#39;</span>)) x
+<span class="kw">JOIN</span>
+    (<span class="kw">SELECT</span> appid
+     <span class="kw">FROM</span> ods_dim_appkey
+     <span class="kw">WHERE</span> dt=<span class="st">&#39;{dt}&#39;</span>
+         <span class="kw">AND</span> is_weibo=<span class="st">&#39;1&#39;</span>) y <span class="kw">ON</span> x.oper_src_id=y.appid
+<span class="kw">JOIN</span>
+    (<span class="kw">SELECT</span> dt,
+            <span class="fu">uid</span>
+     <span class="kw">FROM</span> mds_user_active_day_clear
+     <span class="kw">WHERE</span> dt=<span class="st">&#39;{dt}&#39;</span>) z <span class="kw">ON</span> x.uid=z.uid
+<span class="kw">AND</span> x.dt=z.dt
+<span class="kw">GROUP</span> <span class="kw">BY</span> x.dt</code></pre></div>
+</div>
+<div id="section-4.3.2" class="section level3">
+<h3><span class="header-section-number">4.3.2</span> 热门微博的互动数</h3>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> x.uid,
+       <span class="fu">count</span>(<span class="dv">1</span>) <span class="kw">AS</span> hdl
+<span class="kw">FROM</span>
+    (<span class="kw">SELECT</span> dt,
+            <span class="fu">uid</span>,
+            oper_src_id,
+            opp_uid <span class="kw">AS</span> bdid
+     <span class="kw">FROM</span> mds_bhv_pubblog
+     <span class="kw">WHERE</span> dt=<span class="st">&#39;{dt}&#39;</span>
+         <span class="kw">AND</span> is_transmit=<span class="st">&#39;1&#39;</span>
+         <span class="kw">AND</span> (extend <span class="kw">LIKE</span> <span class="st">&#39;%page_102803%&#39;</span>
+              <span class="kw">OR</span> extend <span class="kw">LIKE</span> <span class="st">&#39;%page_230509%&#39;</span>
+              <span class="kw">OR</span> extend <span class="kw">LIKE</span> <span class="st">&#39;%page_231159%&#39;</span>
+              <span class="kw">OR</span> (<span class="fu">substr</span>(<span class="kw">split</span>(findid(extend,<span class="st">&#39;spr&#39;</span>),<span class="st">&#39;lfid:&#39;</span>)[<span class="dv">1</span>],<span class="dv">1</span>,<span class="dv">6</span>) <span class="kw">in</span>(<span class="st">&#39;102803&#39;</span>,<span class="st">&#39;230509&#39;</span>,<span class="st">&#39;231159&#39;</span>,<span class="st">&#39;230584&#39;</span>,<span class="st">&#39;230781&#39;</span>,<span class="st">&#39;231146&#39;</span>,<span class="st">&#39;231147&#39;</span>)))
+     <span class="kw">UNION</span> <span class="kw">ALL</span> <span class="kw">SELECT</span> dt,
+                      <span class="fu">uid</span>,
+                      oper_src_id,
+                      object_owner <span class="kw">AS</span> bdid
+     <span class="kw">FROM</span> mds_bhv_like
+     <span class="kw">WHERE</span> dt=<span class="st">&#39;{dt}&#39;</span>
+         <span class="kw">AND</span> MODE=<span class="st">&#39;1&#39;</span>
+         <span class="kw">AND</span> object_type=<span class="st">&#39;status&#39;</span>
+         <span class="kw">AND</span> (extend <span class="kw">LIKE</span> <span class="st">&#39;%page_102803%&#39;</span>
+              <span class="kw">OR</span> extend <span class="kw">LIKE</span> <span class="st">&#39;%page_230509%&#39;</span>
+              <span class="kw">OR</span> extend <span class="kw">LIKE</span> <span class="st">&#39;%page_231159%&#39;</span>
+              <span class="kw">OR</span> (<span class="fu">substr</span>(<span class="kw">split</span>(findid(extend,<span class="st">&#39;spr&#39;</span>),<span class="st">&#39;</span><span class="ch">\\</span><span class="st">;fid:&#39;</span>)[<span class="dv">1</span>],<span class="dv">1</span>,<span class="dv">6</span>) <span class="kw">in</span>(<span class="st">&#39;102803&#39;</span>,<span class="st">&#39;230509&#39;</span>,<span class="st">&#39;231159&#39;</span>,<span class="st">&#39;230584&#39;</span>,<span class="st">&#39;230781&#39;</span>,<span class="st">&#39;231146&#39;</span>,<span class="st">&#39;231147&#39;</span>)))
+     <span class="kw">UNION</span> <span class="kw">ALL</span> <span class="kw">SELECT</span> dt,
+                      <span class="fu">uid</span>,
+                      oper_src_id,
+                      author_uid <span class="kw">AS</span> bdid
+     <span class="kw">FROM</span> mds_bhv_cmtblog
+     <span class="kw">WHERE</span> dt=<span class="st">&#39;{dt}&#39;</span>
+         <span class="kw">AND</span> (extend <span class="kw">LIKE</span> <span class="st">&#39;%page_102803%&#39;</span>
+              <span class="kw">OR</span> extend <span class="kw">LIKE</span> <span class="st">&#39;%page_230509%&#39;</span>
+              <span class="kw">OR</span> extend <span class="kw">LIKE</span> <span class="st">&#39;%page_231159%&#39;</span>
+              <span class="kw">OR</span> (<span class="fu">substr</span>(<span class="kw">split</span>(findid(extend,<span class="st">&#39;spr&#39;</span>),<span class="st">&#39;lfid:&#39;</span>)[<span class="dv">1</span>],<span class="dv">1</span>,<span class="dv">6</span>) <span class="kw">in</span>(<span class="st">&#39;102803&#39;</span>,<span class="st">&#39;230509&#39;</span>,<span class="st">&#39;231159&#39;</span>,<span class="st">&#39;230584&#39;</span>,<span class="st">&#39;230781&#39;</span>,<span class="st">&#39;231146&#39;</span>,<span class="st">&#39;231147&#39;</span>)))) x
+<span class="kw">JOIN</span>
+    (<span class="kw">SELECT</span> appid
+     <span class="kw">FROM</span> ods_dim_appkey
+     <span class="kw">WHERE</span> dt=<span class="st">&#39;{dt}&#39;</span>
+         <span class="kw">AND</span> is_weibo=<span class="st">&#39;1&#39;</span>) y <span class="kw">ON</span> x.oper_src_id=y.appid
+<span class="kw">JOIN</span>
+    (<span class="kw">SELECT</span> dt,
+            <span class="fu">uid</span>
+     <span class="kw">FROM</span> mds_user_active_day_clear
+     <span class="kw">WHERE</span> dt=<span class="st">&#39;{dt}&#39;</span>) z <span class="kw">ON</span> x.uid=z.uid
+<span class="kw">AND</span> x.dt=z.dt
+<span class="kw">GROUP</span> <span class="kw">BY</span> x.uid</code></pre></div>
+</div>
+<div id="section-4.3.3" class="section level3">
+<h3><span class="header-section-number">4.3.3</span> 热门微博的点击数</h3>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> dt,
+       action,
+       <span class="fu">count</span>(<span class="dv">1</span>)
+<span class="kw">FROM</span> (
+<span class="kw">SELECT</span> dt,
+       action,
+       <span class="fu">uid</span>,
+       mid
+<span class="kw">FROM</span> (
+<span class="kw">SELECT</span> dt,
+       <span class="st">&#39;点击文章&#39;</span>AS action,
+       <span class="fu">uid</span>,
+       <span class="kw">split</span>(<span class="kw">split</span>(extend,<span class="st">&#39;mid:&#39;</span>)[<span class="dv">1</span>],<span class="st">&#39;</span><span class="ch">\\</span><span class="st">|&#39;</span>)[<span class="dv">0</span>]<span class="kw">AS</span> mid
+<span class="kw">FROM</span> ods_wls_encode_bhv
+<span class="kw">WHERE</span> dt&gt;=<span class="st">&#39;20161201&#39;</span>
+    <span class="kw">AND</span> dt&lt;=<span class="st">&#39;20161231&#39;</span>
+    <span class="kw">AND</span> action=<span class="st">&#39;1423&#39;</span>
+    <span class="kw">AND</span> act=<span class="st">&#39;other&#39;</span>
+    <span class="kw">AND</span> (main_id <span class="kw">LIKE</span> <span class="st">&#39;102803%&#39;</span>
+         <span class="kw">OR</span> main_id <span class="kw">LIKE</span> <span class="st">&#39;230509%&#39;</span>
+         <span class="kw">OR</span> main_id <span class="kw">LIKE</span> <span class="st">&#39;231159%&#39;</span>
+         <span class="kw">OR</span> main_id <span class="kw">LIKE</span> <span class="st">&#39;231146%&#39;</span>
+         <span class="kw">OR</span> main_id <span class="kw">LIKE</span> <span class="st">&#39;231147%&#39;</span>
+         <span class="kw">OR</span> main_id <span class="kw">LIKE</span> <span class="st">&#39;230584%&#39;</span>
+         <span class="kw">OR</span> main_id <span class="kw">LIKE</span> <span class="st">&#39;230781%&#39;</span>
+         <span class="kw">OR</span> (uicode=<span class="st">&#39;10000225&#39;</span>
+             <span class="kw">AND</span> <span class="fu">length</span>(<span class="fu">uid</span>)&gt;<span class="dv">10</span>))
+    <span class="kw">AND</span> from_val <span class="kw">LIKE</span> <span class="st">&#39;10%&#39;</span>
+    <span class="kw">AND</span> (VERSION=<span class="dv">0</span>
+         <span class="kw">OR</span> VERSION <span class="kw">IS</span> <span class="kw">NULL</span>)
+<span class="kw">UNION</span> <span class="kw">ALL</span>
+<span class="kw">SELECT</span> dt,
+       <span class="st">&#39;点击视频&#39;</span>AS action,
+       <span class="fu">uid</span>,
+       <span class="kw">split</span>(<span class="kw">split</span>(extend,<span class="st">&#39;mid:&#39;</span>)[<span class="dv">1</span>],<span class="st">&#39;</span><span class="ch">\\</span><span class="st">|&#39;</span>)[<span class="dv">0</span>]<span class="kw">AS</span> mid
+<span class="kw">FROM</span> ods_wls_encode_bhv
+<span class="kw">WHERE</span> dt&gt;=<span class="st">&#39;20161201&#39;</span>
+    <span class="kw">AND</span> dt&lt;=<span class="st">&#39;20161231&#39;</span>
+    <span class="kw">AND</span> action=<span class="st">&#39;799&#39;</span>
+    <span class="kw">AND</span> act=<span class="st">&#39;799&#39;</span>
+    <span class="kw">AND</span> (main_id <span class="kw">LIKE</span> <span class="st">&#39;102803%&#39;</span>
+         <span class="kw">OR</span> main_id <span class="kw">LIKE</span> <span class="st">&#39;230509%&#39;</span>
+         <span class="kw">OR</span> main_id <span class="kw">LIKE</span> <span class="st">&#39;231159%&#39;</span>
+         <span class="kw">OR</span> main_id <span class="kw">LIKE</span> <span class="st">&#39;231146%&#39;</span>
+         <span class="kw">OR</span> main_id <span class="kw">LIKE</span> <span class="st">&#39;231147%&#39;</span>
+         <span class="kw">OR</span> main_id <span class="kw">LIKE</span> <span class="st">&#39;230584%&#39;</span>
+         <span class="kw">OR</span> main_id <span class="kw">LIKE</span> <span class="st">&#39;230781%&#39;</span>
+         <span class="kw">OR</span> (uicode=<span class="st">&#39;10000225&#39;</span>
+             <span class="kw">AND</span> <span class="fu">length</span>(<span class="fu">uid</span>)&gt;<span class="dv">10</span>))
+    <span class="kw">AND</span> from_val <span class="kw">LIKE</span> <span class="st">&#39;10%&#39;</span>
+    <span class="kw">AND</span> (VERSION=<span class="dv">0</span>
+         <span class="kw">OR</span> VERSION <span class="kw">IS</span> <span class="kw">NULL</span>)
+    <span class="kw">AND</span> ((from_val&gt;=<span class="st">&#39;1065000000&#39;</span>
+          <span class="kw">AND</span> <span class="kw">split</span>(<span class="kw">split</span>(extend,<span class="st">&#39;valid_play_duration:&#39;</span>)[<span class="dv">1</span>],<span class="st">&#39;</span><span class="ch">\\</span><span class="st">|&#39;</span>)[<span class="dv">0</span>]&gt;<span class="dv">3000</span>)
+          <span class="kw">OR</span> (from_val&lt;<span class="st">&#39;1065000000&#39;</span>
+              <span class="kw">AND</span> <span class="kw">split</span>(<span class="kw">split</span>(extend,<span class="st">&#39;playduration:&#39;</span>)[<span class="dv">1</span>],<span class="st">&#39;</span><span class="ch">\\</span><span class="st">|&#39;</span>)[<span class="dv">0</span>]&gt;<span class="dv">3000</span>))
+          <span class="kw">UNION</span> <span class="kw">ALL</span>
+          <span class="kw">SELECT</span> dt,
+                 <span class="st">&#39;点击图片&#39;</span> <span class="kw">AS</span> action,
+                 <span class="fu">uid</span>,
+                 <span class="kw">split</span>(<span class="kw">split</span>(extend,<span class="st">&#39;mid:&#39;</span>)[<span class="dv">1</span>],<span class="st">&#39;</span><span class="ch">\\</span><span class="st">|&#39;</span>)[<span class="dv">0</span>]<span class="kw">AS</span> mid
+                       <span class="kw">FROM</span> ods_wls_encode_bhv
+                       <span class="kw">WHERE</span> dt&gt;=<span class="st">&#39;20161201&#39;</span>
+                           <span class="kw">AND</span> dt&lt;=<span class="st">&#39;20161231&#39;</span>
+                           <span class="kw">AND</span> action <span class="kw">IN</span> (<span class="st">&#39;41&#39;</span>,<span class="st">&#39;54&#39;</span>,<span class="st">&#39;55&#39;</span>,<span class="st">&#39;127&#39;</span>,<span class="st">&#39;128&#39;</span>,<span class="st">&#39;749&#39;</span>)
+                           <span class="kw">AND</span> act <span class="kw">IN</span> (<span class="st">&#39;749&#39;</span>,<span class="st">&#39;other&#39;</span>)
+                           <span class="kw">AND</span> (<span class="kw">split</span>(previous_id,<span class="st">&#39;</span><span class="ch">\\</span><span class="st">|&#39;</span>)[<span class="dv">0</span>] <span class="kw">like</span> <span class="st">&#39;102803%&#39;</span> <span class="kw">or</span> <span class="kw">split</span>(previous_id,<span class="st">&#39;</span><span class="ch">\\</span><span class="st">|&#39;</span>)[<span class="dv">0</span>] <span class="kw">like</span> <span class="st">&#39;230509%&#39;</span>or <span class="kw">split</span>(previous_id,<span class="st">&#39;</span><span class="ch">\\</span><span class="st">|&#39;</span>)[<span class="dv">0</span>] <span class="kw">LIKE</span> <span class="st">&#39;231159%&#39;</span>
+                                <span class="kw">OR</span> previous_id <span class="kw">LIKE</span> <span class="st">&#39;231146%&#39;</span>
+                                <span class="kw">OR</span> previous_id <span class="kw">LIKE</span> <span class="st">&#39;231147%&#39;</span>
+                                <span class="kw">OR</span> <span class="kw">split</span>(previous_id,<span class="st">&#39;</span><span class="ch">\\</span><span class="st">|&#39;</span>)[<span class="dv">0</span>] <span class="kw">like</span> <span class="st">&#39;230584%&#39;</span> <span class="kw">or</span> <span class="kw">split</span>(previous_id,<span class="st">&#39;</span><span class="ch">\\</span><span class="st">|&#39;</span>)[<span class="dv">0</span>] <span class="kw">LIKE</span> <span class="st">&#39;230781%&#39;</span>
+                                <span class="kw">OR</span> (previous_uicode= <span class="st">&#39;10000225&#39;</span>
+                                    <span class="kw">AND</span> <span class="fu">length</span>(<span class="fu">uid</span>)&gt;<span class="dv">10</span>))
+                           <span class="kw">AND</span> from_val <span class="kw">LIKE</span> <span class="st">&#39;10%&#39;</span>
+                           <span class="kw">AND</span> (VERSION=<span class="dv">0</span>
+                                <span class="kw">OR</span> VERSION <span class="kw">IS</span> <span class="kw">NULL</span>)
+                       <span class="kw">UNION</span> <span class="kw">ALL</span>
+                       <span class="kw">SELECT</span> dt,<span class="st">&#39;点击正文&#39;</span> <span class="kw">AS</span> action,<span class="fu">uid</span>,target_id <span class="kw">AS</span> mid
+                       <span class="kw">FROM</span> ods_wls_encode_bhv
+                       <span class="kw">WHERE</span> dt&gt;=<span class="st">&#39;20161201&#39;</span>
+                           <span class="kw">AND</span> dt&lt;=<span class="st">&#39;20161231&#39;</span>
+                           <span class="kw">AND</span> action=<span class="st">&#39;7&#39;</span>
+                           <span class="kw">AND</span> act=<span class="st">&#39;other&#39;</span>
+                           <span class="kw">AND</span> (<span class="kw">split</span>(previous_id,<span class="st">&#39;</span><span class="ch">\\</span><span class="st">|&#39;</span>)[<span class="dv">0</span>] <span class="kw">like</span> <span class="st">&#39;102803%&#39;</span> <span class="kw">or</span> <span class="kw">split</span>(previous_id,<span class="st">&#39;</span><span class="ch">\\</span><span class="st">|&#39;</span>)[<span class="dv">0</span>] <span class="kw">like</span> <span class="st">&#39;230509%&#39;</span>or <span class="kw">split</span>(previous_id,<span class="st">&#39;</span><span class="ch">\\</span><span class="st">|&#39;</span>)[<span class="dv">0</span>] <span class="kw">LIKE</span> <span class="st">&#39;231159%&#39;</span>
+                                <span class="kw">OR</span> previous_id <span class="kw">LIKE</span> <span class="st">&#39;231146%&#39;</span>
+                                <span class="kw">OR</span> previous_id <span class="kw">LIKE</span> <span class="st">&#39;231147%&#39;</span>
+                                <span class="kw">OR</span> <span class="kw">split</span>(previous_id,<span class="st">&#39;</span><span class="ch">\\</span><span class="st">|&#39;</span>)[<span class="dv">0</span>] <span class="kw">like</span> <span class="st">&#39;230584%&#39;</span> <span class="kw">or</span> <span class="kw">split</span>(previous_id,<span class="st">&#39;</span><span class="ch">\\</span><span class="st">|&#39;</span>)[<span class="dv">0</span>] <span class="kw">LIKE</span> <span class="st">&#39;230781%&#39;</span>
+                                <span class="kw">OR</span> (previous_uicode= <span class="st">&#39;10000225&#39;</span>
+                                    <span class="kw">AND</span> <span class="fu">length</span>(<span class="fu">uid</span>)&gt;<span class="dv">10</span>))
+                           <span class="kw">AND</span> from_val <span class="kw">LIKE</span> <span class="st">&#39;10%&#39;</span>
+                           <span class="kw">AND</span> (VERSION=<span class="dv">0</span>
+                                <span class="kw">OR</span> VERSION <span class="kw">IS</span> <span class="kw">NULL</span>))a
+          <span class="kw">GROUP</span> <span class="kw">BY</span> dt,
+                   action,
+                   <span class="fu">uid</span>,
+                   mid)x
+<span class="kw">GROUP</span> <span class="kw">BY</span> dt,
+         action</code></pre></div>
+</div>
+</div>
+<div id="luicode" class="section level2">
+<h2><span class="header-section-number">4.4</span> 首次打开按luicode</h2>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> <span class="kw">KEY</span>,
+       <span class="fu">count</span>(<span class="fu">uid</span>) <span class="kw">AS</span> cnt
+<span class="kw">FROM</span>
+    (<span class="kw">SELECT</span> <span class="fu">uid</span>,
+            <span class="kw">split</span>(day_key,<span class="st">&#39;</span><span class="ch">\\\\</span><span class="st">|&#39;</span>)[<span class="dv">1</span>] <span class="kw">as</span> <span class="kw">key</span>,<span class="fu">row_number</span>() <span class="kw">over</span> (<span class="kw">PARTITION</span> <span class="kw">BY</span> <span class="fu">uid</span> <span class="kw">ORDER</span> <span class="kw">BY</span> <span class="kw">split</span>(day_key,<span class="st">&#39;</span><span class="ch">\\\\</span><span class="st">|&#39;</span>)[<span class="dv">1</span>] <span class="kw">ASC</span>) <span class="kw">AS</span> rn
+<span class="kw">FROM</span> ods_wls_encode_bhv
+<span class="kw">WHERE</span> dt <span class="kw">BETWEEN</span> <span class="st">&#39;20171210&#39;</span> <span class="kw">AND</span> <span class="st">&#39;20171211&#39;</span>
+    <span class="kw">AND</span> act=<span class="st">&#39;496&#39;</span>
+    <span class="kw">AND</span> <span class="kw">split</span>(day_key, <span class="st">&#39;</span><span class="ch">\\\\</span><span class="st">|&#39;</span>)[<span class="dv">1</span>] <span class="kw">BETWEEN</span> <span class="st">&#39;2017-12-10 06:00:00&#39;</span> <span class="kw">AND</span> <span class="st">&#39;2017-12-11 05:59:59&#39;</span>
+    <span class="kw">AND</span> act=<span class="st">&#39;496&#39;</span>
+    <span class="kw">AND</span> <span class="fu">uid</span> <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span>
+    <span class="kw">AND</span> wm <span class="kw">NOT</span> <span class="kw">IN</span> (<span class="st">&#39;8605_2003&#39;</span>,
+                   <span class="st">&#39;4209_8001&#39;</span>,
+                   <span class="st">&#39;90027_90052&#39;</span>) )a <span class="kw">WHERE</span> rn = <span class="dv">1</span>
+<span class="kw">GROUP</span> <span class="kw">BY</span> <span class="kw">KEY</span>
+<span class="kw">ORDER</span> <span class="kw">BY</span> cnt <span class="kw">DESC</span></code></pre></div>
+</div>
+<div id="section-4.5" class="section level2">
+<h2><span class="header-section-number">4.5</span> 在线时长</h2>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> t2.actv_freq,
+       <span class="fu">avg</span>(t3.time)
+<span class="kw">FROM</span>
+  (<span class="kw">SELECT</span> <span class="fu">uid</span>
+   <span class="kw">FROM</span> tmp_weibo_usergrowth_zz_uid
+   <span class="kw">WHERE</span> dt = <span class="st">&#39;20171210&#39;</span>) t1
+<span class="kw">LEFT</span> <span class="kw">JOIN</span>
+  (<span class="kw">SELECT</span> <span class="fu">uid</span>,
+          actv_freq
+   <span class="kw">FROM</span> mds_bhv_user_active_month_stat
+   <span class="kw">WHERE</span> dt = <span class="st">&#39;20171211&#39;</span>
+     <span class="kw">AND</span> stat_type = <span class="st">&#39;2&#39;</span>
+   <span class="kw">GROUP</span> <span class="kw">BY</span> <span class="fu">uid</span>,
+            actv_freq) t2 <span class="kw">ON</span> t1.uid = t2.uid
+<span class="kw">LEFT</span> <span class="kw">JOIN</span> (
+<span class="kw">SELECT</span> <span class="fu">uid</span>,
+       <span class="fu">sum</span>(<span class="dt">time</span>) <span class="kw">AS</span> <span class="dt">time</span>
+<span class="kw">FROM</span> (
+<span class="kw">SELECT</span> t3.uid,
+       <span class="kw">split</span>(<span class="kw">split</span>(t3.extend, <span class="st">&#39;useTime:&#39;</span>)[<span class="dv">1</span>], <span class="st">&#39;</span><span class="ch">\\\\</span><span class="st">|&#39;</span>)[<span class="dv">0</span>] <span class="kw">AS</span> <span class="dt">time</span>
+             <span class="kw">FROM</span>
+               (<span class="kw">SELECT</span> <span class="fu">uid</span>, extend
+                <span class="kw">FROM</span> ods_wls_encode_bhv
+                <span class="kw">WHERE</span> dt = <span class="st">&#39;20171210&#39;</span>
+                  <span class="kw">AND</span> act = <span class="st">&#39;1339&#39;</span>
+                  <span class="kw">AND</span> ((wm&lt;&gt;<span class="st">&#39;8605_2003&#39;</span>
+                        <span class="kw">AND</span> wm&lt;&gt;<span class="st">&#39;4209_8001&#39;</span>
+                        <span class="kw">AND</span> wm&lt;&gt;<span class="st">&#39;90027_90052&#39;</span>)
+                       <span class="kw">OR</span> wm <span class="kw">IS</span> <span class="kw">NULL</span>)
+                  <span class="kw">AND</span> <span class="fu">length</span>(<span class="fu">uid</span>) &lt;= <span class="dv">13</span>
+                <span class="kw">GROUP</span> <span class="kw">BY</span> <span class="fu">uid</span>, extend) t3
+             <span class="kw">WHERE</span> <span class="kw">split</span>(<span class="kw">split</span>(t3.extend, <span class="st">&#39;useTime:&#39;</span>)[<span class="dv">1</span>], <span class="st">&#39;</span><span class="ch">\\\\</span><span class="st">|&#39;</span>)[<span class="dv">0</span>] <span class="kw">BETWEEN</span> <span class="st">&#39;0&#39;</span> <span class="kw">AND</span> <span class="st">&#39;10800&#39;</span>) a
+             <span class="kw">GROUP</span> <span class="kw">BY</span> <span class="fu">uid</span>) t3 <span class="kw">ON</span> t1.uid = t3.uid
+<span class="kw">GROUP</span> <span class="kw">BY</span> t2.actv_freq</code></pre></div>
+</div>
+<div id="push" class="section level2">
+<h2><span class="header-section-number">4.6</span> 可push库地理位置</h2>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">insert</span> overwrite <span class="kw">local</span> <span class="kw">directory</span> <span class="st">&#39;/data0/weibo_usergrowth/zouqi/scripts/temp/zb&#39;</span>
+<span class="kw">SELECT</span> <span class="fu">count</span>(a.uid)
+<span class="kw">FROM</span>
+    (<span class="kw">SELECT</span> <span class="fu">uid</span>
+     <span class="kw">FROM</span> mds_wls_oper_pushable_devicelist
+     <span class="kw">WHERE</span> dt=<span class="dv">20171210</span>
+     <span class="kw">GROUP</span> <span class="kw">BY</span> <span class="fu">uid</span>) a
+<span class="kw">INNER</span> <span class="kw">JOIN</span>
+    (<span class="kw">SELECT</span> <span class="fu">uid</span>
+     <span class="kw">FROM</span> mds_bas_user_usagefreq
+     <span class="kw">WHERE</span> dt=<span class="dv">20171210</span>
+         <span class="kw">AND</span> use_in_mb=<span class="st">&#39;2&#39;</span>)b <span class="kw">ON</span> a.uid=b.uid
+<span class="kw">INNER</span> <span class="kw">JOIN</span>
+    (<span class="kw">SELECT</span> <span class="fu">uid</span>
+     <span class="kw">FROM</span>
+         (<span class="kw">SELECT</span> <span class="fu">uid</span>,
+                 <span class="kw">IF</span>(substring(city_location,<span class="dv">1</span>,<span class="dv">7</span>) = substring(district_location,<span class="dv">1</span>,<span class="dv">7</span>), district_location, city_location) <span class="kw">AS</span> district
+          <span class="kw">FROM</span> tmp_leon_uid_city_district
+          <span class="kw">WHERE</span> dt=<span class="dv">20171212</span>) a
+     <span class="kw">WHERE</span> substring(district,<span class="dv">6</span>,<span class="dv">2</span>) <span class="kw">NOT</span> <span class="kw">IN</span> (<span class="st">&#39;11&#39;</span>,
+                                           <span class="st">&#39;31&#39;</span>)
+         <span class="kw">AND</span> substring(district,<span class="dv">6</span>,<span class="dv">4</span>) <span class="kw">NOT</span> <span class="kw">IN</span> (<span class="st">&#39;4401&#39;</span>,
+                                             <span class="st">&#39;4403&#39;</span>)) c <span class="kw">ON</span> a.uid=c.uid
+<span class="kw">GROUP</span> <span class="kw">BY</span> a.uid
+<span class="kw">ORDER</span> <span class="kw">BY</span> a.uid</code></pre></div>
+</div>
+<div id="section-4.7" class="section level2">
+<h2><span class="header-section-number">4.7</span> 用户类型</h2>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> f.uid <span class="kw">AS</span> <span class="fu">uid</span>, f.gp <span class="kw">AS</span> <span class="kw">label</span>
+<span class="kw">FROM</span>
+    (<span class="kw">SELECT</span> <span class="kw">CASE</span>
+                <span class="kw">WHEN</span> d.uid <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">THEN</span> <span class="st">&#39;新户正式用户&#39;</span>
+                <span class="kw">ELSE</span> <span class="st">&#39;召回正式用户&#39;</span>
+            <span class="kw">END</span> <span class="kw">AS</span> gp,
+            c.uid
+     <span class="kw">FROM</span>
+         (<span class="kw">SELECT</span> a.uid
+          <span class="kw">FROM</span>
+              (<span class="kw">SELECT</span> <span class="fu">uid</span>
+               <span class="kw">FROM</span> mds_bhv_login_day
+               <span class="kw">WHERE</span> dt=<span class="st">&#39;${dt[$i]}&#39;</span>
+                   <span class="kw">AND</span> login_type=<span class="st">&#39;wap_client&#39;</span>
+                   <span class="kw">AND</span> <span class="fu">length</span>(<span class="fu">uid</span>)&lt;=<span class="dv">10</span>
+               <span class="kw">GROUP</span> <span class="kw">BY</span> <span class="fu">uid</span>)a
+          <span class="kw">LEFT</span> <span class="kw">OUTER</span> <span class="kw">JOIN</span>
+              (<span class="kw">SELECT</span> <span class="fu">uid</span>
+               <span class="kw">FROM</span> mds_bhv_user_active_month_stat
+               <span class="kw">WHERE</span> dt=<span class="st">&#39;${dt_1}&#39;</span>
+                   <span class="kw">AND</span> <span class="fu">length</span>(<span class="fu">uid</span>)&lt;=<span class="dv">10</span>
+                   <span class="kw">AND</span> stat_type=<span class="st">&#39;2&#39;</span>)b <span class="kw">ON</span> a.uid=b.uid
+          <span class="kw">WHERE</span> b.uid <span class="kw">IS</span> <span class="kw">NULL</span>)c
+     <span class="kw">LEFT</span> <span class="kw">OUTER</span> <span class="kw">JOIN</span>
+         (<span class="kw">SELECT</span> <span class="fu">uid</span>
+          <span class="kw">FROM</span> mds_user_reg_info
+          <span class="kw">WHERE</span> dt=<span class="st">&#39;${dt[$i]}&#39;</span>
+          <span class="kw">GROUP</span> <span class="kw">BY</span> <span class="fu">uid</span>)d <span class="kw">ON</span> c.uid=d.uid
+     <span class="kw">UNION</span> <span class="kw">ALL</span> <span class="kw">SELECT</span> <span class="kw">CASE</span>
+                          <span class="kw">WHEN</span> d1.uid <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span> <span class="kw">THEN</span> <span class="st">&#39;新户访客&#39;</span>
+                          <span class="kw">ELSE</span> <span class="st">&#39;召回访客&#39;</span>
+                      <span class="kw">END</span> <span class="kw">AS</span> gp,
+                      c1.uid
+     <span class="kw">FROM</span>
+         (<span class="kw">SELECT</span> a1.uid
+          <span class="kw">FROM</span>
+              (<span class="kw">SELECT</span> w1.guest_id <span class="kw">AS</span> <span class="fu">uid</span>
+               <span class="kw">FROM</span>
+                   (<span class="kw">SELECT</span> guest_id
+                    <span class="kw">FROM</span> ods_wls_guest_login
+                    <span class="kw">WHERE</span> dt=<span class="st">&#39;${dt[$i]}&#39;</span>
+                        <span class="kw">AND</span> wfrom <span class="kw">LIKE</span> <span class="st">&#39;10%&#39;</span>
+                        <span class="kw">AND</span> ((wm&lt;&gt;<span class="st">&#39;8605_2003&#39;</span>
+                              <span class="kw">AND</span> wm&lt;&gt;<span class="st">&#39;4209_8001&#39;</span>
+                              <span class="kw">AND</span> wm&lt;&gt;<span class="st">&#39;90027_90052&#39;</span>)
+                             <span class="kw">OR</span> wm <span class="kw">IS</span> <span class="kw">NULL</span>)
+                    <span class="kw">GROUP</span> <span class="kw">BY</span> guest_id)w1
+               <span class="kw">LEFT</span> <span class="kw">OUTER</span> <span class="kw">JOIN</span>
+                   (<span class="kw">SELECT</span> guest_id
+                    <span class="kw">FROM</span> ods_wls_guest_login
+                    <span class="kw">WHERE</span> dt=<span class="st">&#39;${dt[$i]}&#39;</span>
+                        <span class="kw">AND</span> wfrom <span class="kw">LIKE</span> <span class="st">&#39;10%&#39;</span>
+                        <span class="kw">AND</span> ((wm&lt;&gt;<span class="st">&#39;8605_2003&#39;</span>
+                              <span class="kw">AND</span> wm&lt;&gt;<span class="st">&#39;4209_8001&#39;</span>
+                              <span class="kw">AND</span> wm&lt;&gt;<span class="st">&#39;90027_90052&#39;</span>)
+                             <span class="kw">OR</span> wm <span class="kw">IS</span> <span class="kw">NULL</span>)
+                        <span class="kw">AND</span> MODE=<span class="st">&#39;TRANS&#39;</span>
+                    <span class="kw">GROUP</span> <span class="kw">BY</span> guest_id)j1 <span class="kw">ON</span> w1.guest_id=j1.guest_id
+               <span class="kw">WHERE</span> j1.guest_id <span class="kw">IS</span> <span class="kw">NULL</span>)a1
+          <span class="kw">LEFT</span> <span class="kw">OUTER</span> <span class="kw">JOIN</span>
+              (<span class="kw">SELECT</span> guest_id <span class="kw">AS</span> <span class="fu">uid</span>
+               <span class="kw">FROM</span> ods_wls_guest_login
+               <span class="kw">WHERE</span> dt&gt;=<span class="st">&#39;${dt_30}&#39;</span>
+                   <span class="kw">AND</span> dt&lt;=<span class="st">&#39;${dt_1}&#39;</span>
+                   <span class="kw">AND</span> wfrom <span class="kw">LIKE</span> <span class="st">&#39;10%&#39;</span>
+                   <span class="kw">AND</span> ((wm&lt;&gt;<span class="st">&#39;8605_2003&#39;</span>
+                         <span class="kw">AND</span> wm&lt;&gt;<span class="st">&#39;4209_8001&#39;</span>
+                         <span class="kw">AND</span> wm&lt;&gt;<span class="st">&#39;90027_90052&#39;</span>)
+                        <span class="kw">OR</span> wm <span class="kw">IS</span> <span class="kw">NULL</span>)
+               <span class="kw">GROUP</span> <span class="kw">BY</span> guest_id)b1 <span class="kw">ON</span> a1.uid=b1.uid
+          <span class="kw">WHERE</span> b1.uid <span class="kw">IS</span> <span class="kw">NULL</span>)c1
+     <span class="kw">LEFT</span> <span class="kw">OUTER</span> <span class="kw">JOIN</span>
+         (<span class="kw">SELECT</span> guest_id <span class="kw">AS</span> <span class="fu">uid</span>
+          <span class="kw">FROM</span> ods_wls_guest_login
+          <span class="kw">WHERE</span> dt=<span class="st">&#39;${dt[$i]}&#39;</span>
+              <span class="kw">AND</span> wfrom <span class="kw">LIKE</span> <span class="st">&#39;10%&#39;</span>
+              <span class="kw">AND</span> ((wm&lt;&gt;<span class="st">&#39;8605_2003&#39;</span>
+                    <span class="kw">AND</span> wm&lt;&gt;<span class="st">&#39;4209_8001&#39;</span>
+                    <span class="kw">AND</span> wm&lt;&gt;<span class="st">&#39;90027_90052&#39;</span>)
+                   <span class="kw">OR</span> wm <span class="kw">IS</span> <span class="kw">NULL</span>)
+              <span class="kw">AND</span> MODE=<span class="st">&#39;REGISTER&#39;</span>
+          <span class="kw">GROUP</span> <span class="kw">BY</span> guest_id)d1 <span class="kw">ON</span> c1.uid=d1.uid)f
+<span class="kw">GROUP</span> <span class="kw">BY</span> f.gp,
+         f.uid;</code></pre></div>
+</div>
+<div id="section-4.8" class="section level2">
+<h2><span class="header-section-number">4.8</span> 发博转发评论<font color=red>中位数</font></h2>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> t2.actv_freq,
+       <span class="fu">avg</span>(orig_cnt),
+       <span class="fu">avg</span>(tran_cnt),
+       <span class="fu">avg</span>(cmt_cnt),
+       <span class="fu">avg</span>(new_atten_cnt),
+       percentile(<span class="fu">cast</span>(orig_cnt <span class="kw">as</span> BIGINT), <span class="fl">0.5</span>),
+       percentile(<span class="fu">cast</span>(tran_cnt <span class="kw">as</span> BIGINT), <span class="fl">0.5</span>),
+       percentile(<span class="fu">cast</span>(cmt_cnt <span class="kw">as</span> BIGINT), <span class="fl">0.5</span>),
+       percentile(<span class="fu">cast</span>(new_atten_cnt <span class="kw">as</span> BIGINT), <span class="fl">0.5</span>)
+<span class="kw">FROM</span>
+    (<span class="kw">SELECT</span> <span class="fu">uid</span>
+     <span class="kw">FROM</span> tmp_weibo_usergrowth_zz_uid
+     <span class="kw">WHERE</span> dt = <span class="st">&#39;20171210&#39;</span>) t1
+<span class="kw">LEFT</span> <span class="kw">JOIN</span>
+    (<span class="kw">SELECT</span> <span class="fu">uid</span>,
+            actv_freq
+     <span class="kw">FROM</span> mds_bhv_user_active_month_stat
+     <span class="kw">WHERE</span> dt = <span class="st">&#39;20171211&#39;</span>
+        <span class="kw">AND</span> mobile_actv_days &gt; <span class="dv">0</span>
+         <span class="kw">AND</span> stat_type = <span class="st">&#39;2&#39;</span>
+     <span class="kw">GROUP</span> <span class="kw">BY</span> <span class="fu">uid</span>,
+              actv_freq) t2 <span class="kw">ON</span> t1.uid = t2.uid
+<span class="kw">LEFT</span> <span class="kw">JOIN</span>
+    (<span class="kw">SELECT</span> <span class="fu">uid</span>,
+            orig_cnt,
+            tran_cnt,
+            cmt_cnt+reply_cmt_cnt <span class="kw">as</span> cmt_cnt,
+            new_atten_cnt
+     <span class="kw">FROM</span> mds_bhv_tblog_day
+     <span class="kw">WHERE</span> dt=<span class="st">&#39;20171210&#39;</span>
+         <span class="kw">AND</span> app_class_code = <span class="st">&#39;2&#39;</span>
+         <span class="kw">AND</span> is_weibo = <span class="st">&#39;10000&#39;</span>
+     <span class="kw">GROUP</span> <span class="kw">BY</span> <span class="fu">uid</span>,
+              orig_cnt,
+              tran_cnt,
+              cmt_cnt+reply_cmt_cnt,
+              new_atten_cnt) t3 <span class="kw">ON</span> t1.uid = t3.uid
+<span class="kw">GROUP</span> <span class="kw">BY</span> t2.actv_freq</code></pre></div>
+</div>
+<div id="section-4.9" class="section level2">
+<h2><span class="header-section-number">4.9</span> 主要行为</h2>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> <span class="fu">uid</span>
+<span class="kw">FROM</span> mds_bhv_user_active_month_30days
+<span class="kw">WHERE</span> dt = <span class="st">&#39;20180104&#39;</span>
+    <span class="kw">AND</span> mobile_actv_days &gt; <span class="dv">0</span>
+    <span class="kw">AND</span> actv_freq = <span class="st">&#39;9&#39;</span>
+
+
+<span class="co">---热门流</span>
+<span class="kw">SELECT</span> <span class="fu">uid</span>
+<span class="kw">FROM</span> ods_tblog_expo
+<span class="kw">WHERE</span> dt = <span class="st">&#39;20180104&#39;</span>
+    <span class="kw">AND</span> appid=<span class="dv">6</span>
+    <span class="kw">AND</span> interface_id <span class="kw">in</span>(<span class="dv">800</span>,<span class="dv">900</span>)
+    <span class="kw">AND</span> <span class="kw">split</span>(<span class="kw">split</span>(extend2,<span class="st">&#39;containerid=&gt;&#39;</span>)[<span class="dv">1</span>],<span class="st">&#39;,&#39;</span>)[<span class="dv">0</span>] <span class="kw">in</span>(<span class="st">&#39;102803&#39;</span>,<span class="st">&#39;230509&#39;</span>,<span class="st">&#39;231159&#39;</span>)
+
+
+<span class="co">--关注流和分享</span>
+<span class="kw">SELECT</span> <span class="fu">uid</span>,
+       <span class="fu">count</span>(<span class="kw">CASE</span> <span class="kw">WHEN</span> action <span class="kw">IN</span> (<span class="st">&#39;1246&#39;</span>, <span class="st">&#39;97&#39;</span>) <span class="kw">THEN</span> <span class="fu">uid</span> <span class="kw">ELSE</span> <span class="kw">NULL</span> <span class="kw">END</span>) <span class="kw">AS</span> <span class="st">&#39;attenfeed&#39;</span>,
+       <span class="fu">count</span>(<span class="kw">CASE</span> <span class="kw">WHEN</span> action <span class="kw">IN</span> (<span class="st">&#39;37&#39;</span>, <span class="st">&#39;38&#39;</span>, <span class="st">&#39;298&#39;</span>, <span class="st">&#39;299&#39;</span>, <span class="st">&#39;370&#39;</span>, <span class="st">&#39;371&#39;</span>, <span class="st">&#39;700&#39;</span>, <span class="st">&#39;682&#39;</span>) <span class="kw">THEN</span> <span class="fu">uid</span> <span class="kw">ELSE</span> <span class="kw">NULL</span> <span class="kw">END</span>) <span class="kw">AS</span> <span class="st">&#39;share&#39;</span>
+<span class="kw">FROM</span> ods_wls_encode_bhv
+<span class="kw">WHERE</span> dt=<span class="st">&#39;20180104&#39;</span>
+    <span class="kw">AND</span> act=<span class="st">&#39;other&#39;</span>
+    <span class="kw">AND</span> <span class="fu">uid</span> <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span>
+<span class="kw">GROUP</span> <span class="kw">BY</span> <span class="fu">uid</span>
+
+
+
+<span class="co">--评论，发博，转发</span>
+<span class="kw">SELECT</span> <span class="fu">uid</span>,
+       cmt_cnt+reply_cmt_cnt <span class="kw">AS</span> cmt_cnt,
+       orig_cnt,
+       tran_cnt
+<span class="kw">FROM</span> mds_bhv_tblog_day
+<span class="kw">WHERE</span> dt = <span class="st">&#39;20180104&#39;</span>
+
+
+<span class="co">--主动关注</span>
+<span class="kw">SELECT</span> <span class="fu">uid</span>
+<span class="kw">FROM</span> mds_bhv_addatten
+<span class="kw">where</span> dt = <span class="st">&#39;20180104&#39;</span>
+<span class="kw">AND</span> mode=<span class="st">&#39;12&#39;</span> <span class="kw">and</span> object_cnt=<span class="dv">1</span>
+
+
+<span class="co">---点赞</span>
+<span class="kw">SELECT</span> <span class="fu">uid</span>
+<span class="kw">FROM</span> mds_bhv_like
+<span class="kw">WHERE</span> dt= <span class="st">&#39;20180104&#39;</span>
+    <span class="kw">AND</span> MODE=<span class="dv">1</span></code></pre></div>
+</div>
+<div id="section-4.10" class="section level2">
+<h2><span class="header-section-number">4.10</span> 曝光</h2>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="co">-------访客用户DAU</span>
+<span class="kw">select</span> <span class="fu">count</span>(<span class="kw">distinct</span> a.uid),
+<span class="fu">count</span>(<span class="kw">distinct</span> <span class="kw">case</span> <span class="kw">when</span> is_weibo =<span class="dv">1</span> <span class="kw">and</span> app_class_code=<span class="dv">2</span> <span class="kw">and</span> interface_id <span class="kw">in</span> (<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">8</span>)  <span class="kw">then</span> a.uid <span class="kw">end</span> ) <span class="kw">as</span> zhu,
+<span class="fu">count</span>(<span class="kw">distinct</span>   <span class="kw">case</span>  <span class="kw">when</span>  is_weibo =<span class="dv">1</span> <span class="kw">and</span> app_class_code=<span class="dv">2</span> <span class="kw">and</span> interface_id <span class="kw">in</span> (<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">202</span>,<span class="dv">207</span>,<span class="dv">201</span>,<span class="dv">203</span>)  <span class="kw">then</span> a.uid <span class="kw">end</span> ) <span class="kw">as</span> fen,
+<span class="fu">count</span>(<span class="kw">distinct</span>    <span class="kw">case</span> <span class="kw">when</span> is_weibo=<span class="dv">1</span> <span class="kw">and</span> app_class_code=<span class="dv">2</span> <span class="kw">and</span> interface_id=<span class="dv">50</span> <span class="kw">then</span> a.uid <span class="kw">end</span> )  ta,
+<span class="fu">count</span>(<span class="kw">distinct</span>    <span class="kw">case</span> <span class="kw">when</span> appid =<span class="dv">6</span> <span class="kw">and</span> interface_id <span class="kw">in</span>(<span class="dv">800</span>,<span class="dv">900</span>) <span class="kw">and</span> <span class="kw">split</span>(<span class="kw">split</span>(extend2,<span class="st">&#39;containerid=&gt;&#39;</span>)[<span class="dv">1</span>],<span class="st">&#39;,&#39;</span>)[<span class="dv">0</span>] =<span class="dv">100808</span> <span class="kw">then</span>  a.uid <span class="kw">end</span> )  hua,
+<span class="fu">count</span>(<span class="kw">distinct</span>   <span class="kw">case</span> <span class="kw">when</span> appid =<span class="dv">6</span> <span class="kw">and</span> interface_id <span class="kw">in</span>(<span class="dv">800</span>,<span class="dv">900</span>) <span class="kw">and</span> <span class="kw">split</span>(<span class="kw">split</span>(extend2,<span class="st">&#39;containerid=&gt;&#39;</span>)[<span class="dv">1</span>],<span class="st">&#39;,&#39;</span>)[<span class="dv">0</span>] <span class="kw">in</span>(<span class="dv">102803</span>,<span class="dv">230509</span>,<span class="dv">231159</span>) <span class="kw">then</span>  a.uid <span class="kw">end</span> )  re,
+<span class="fu">count</span>(<span class="kw">distinct</span>  <span class="kw">case</span>  <span class="kw">when</span> appid =<span class="dv">6</span> <span class="kw">and</span> interface_id <span class="kw">in</span>(<span class="dv">900</span>) <span class="kw">and</span> <span class="kw">split</span>(<span class="kw">split</span>(extend2,<span class="st">&#39;containerid=&gt;&#39;</span>)[<span class="dv">1</span>],<span class="st">&#39;,&#39;</span>)[<span class="dv">0</span>] <span class="kw">in</span>(<span class="st">&#39;100103&#39;</span>,<span class="st">&#39;100303&#39;</span>,<span class="st">&#39;230926&#39;</span>,<span class="st">&#39;230909&#39;</span>,<span class="st">&#39;230928&#39;</span>)  <span class="kw">then</span>  a.uid <span class="kw">end</span> ) <span class="kw">as</span>  sou,
+ <span class="fu">count</span>(<span class="kw">distinct</span>  <span class="kw">case</span> <span class="kw">when</span> appid =<span class="dv">6</span> <span class="kw">and</span> interface_id <span class="kw">in</span>(<span class="dv">800</span>,<span class="dv">900</span>) <span class="kw">and</span> <span class="kw">split</span>(<span class="kw">split</span>(extend2,<span class="st">&#39;containerid=&gt;&#39;</span>)[<span class="dv">1</span>],<span class="st">&#39;,&#39;</span>)[<span class="dv">0</span>] <span class="kw">not</span> <span class="kw">in</span>(<span class="st">&#39;102803&#39;</span> ,<span class="st">&#39;230509&#39;</span>,<span class="st">&#39;100808&#39;</span>,<span class="st">&#39;100103&#39;</span>,<span class="st">&#39;100303&#39;</span>,<span class="st">&#39;230616&#39;</span>,<span class="st">&#39;230618&#39;</span>,<span class="st">&#39;230283&#39;</span>,<span class="st">&#39;231002&#39;</span>,<span class="st">&#39;230969&#39;</span> ,<span class="st">&#39;230408&#39;</span>,<span class="st">&#39;230869&#39;</span>,<span class="st">&#39;230926&#39;</span>,<span class="st">&#39;230909&#39;</span>,<span class="st">&#39;230928&#39;</span>)   <span class="kw">then</span> a.uid <span class="kw">end</span> ) <span class="kw">as</span> qita,
+ <span class="fu">count</span>(<span class="kw">distinct</span>  <span class="kw">case</span> <span class="kw">when</span> (is_weibo =<span class="dv">1</span> <span class="kw">and</span> app_class_code=<span class="dv">2</span> <span class="kw">and</span> interface_id <span class="kw">in</span> (<span class="dv">1</span>,<span class="dv">5</span>,<span class="dv">8</span>))
+                                         <span class="kw">or</span> (is_weibo =<span class="dv">1</span> <span class="kw">and</span> app_class_code=<span class="dv">2</span> <span class="kw">and</span> interface_id <span class="kw">in</span> (<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">6</span>,<span class="dv">202</span>,<span class="dv">207</span>,<span class="dv">201</span>,<span class="dv">203</span>) )
+                                         <span class="kw">or</span> (is_weibo=<span class="dv">1</span> <span class="kw">and</span> app_class_code=<span class="dv">2</span> <span class="kw">and</span> interface_id=<span class="dv">50</span> )
+                                         <span class="kw">or</span> (appid =<span class="dv">6</span> <span class="kw">and</span> interface_id <span class="kw">in</span>(<span class="dv">800</span>,<span class="dv">900</span>) <span class="kw">and</span> <span class="kw">split</span>(<span class="kw">split</span>(extend2,<span class="st">&#39;containerid=&gt;&#39;</span>)[<span class="dv">1</span>],<span class="st">&#39;,&#39;</span>)[<span class="dv">0</span>] =<span class="dv">100808</span> )
+                                         <span class="kw">or</span>(appid =<span class="dv">6</span> <span class="kw">and</span> interface_id <span class="kw">in</span>(<span class="dv">800</span>,<span class="dv">900</span>) <span class="kw">and</span> <span class="kw">split</span>(<span class="kw">split</span>(extend2,<span class="st">&#39;containerid=&gt;&#39;</span>)[<span class="dv">1</span>],<span class="st">&#39;,&#39;</span>)[<span class="dv">0</span>] <span class="kw">in</span>(<span class="dv">102803</span>,<span class="dv">230509</span>,<span class="dv">231159</span>) )
+                                         <span class="kw">or</span> (appid =<span class="dv">6</span> <span class="kw">and</span> interface_id <span class="kw">in</span>(<span class="dv">800</span>,<span class="dv">900</span>) <span class="kw">and</span> <span class="kw">split</span>(<span class="kw">split</span>(extend2,<span class="st">&#39;containerid=&gt;&#39;</span>)[<span class="dv">1</span>],<span class="st">&#39;,&#39;</span>)[<span class="dv">0</span>] <span class="kw">in</span>(<span class="dv">102803</span>,<span class="dv">230509</span>,<span class="dv">231159</span>) )
+                                         <span class="kw">or</span> (appid =<span class="dv">6</span> <span class="kw">and</span> interface_id <span class="kw">in</span>(<span class="dv">800</span>,<span class="dv">900</span>) <span class="kw">and</span> <span class="kw">split</span>(<span class="kw">split</span>(extend2,<span class="st">&#39;containerid=&gt;&#39;</span>)[<span class="dv">1</span>],<span class="st">&#39;,&#39;</span>)[<span class="dv">0</span>] <span class="kw">not</span> <span class="kw">in</span>(<span class="st">&#39;102803&#39;</span> ,<span class="st">&#39;230509&#39;</span>,<span class="st">&#39;100808&#39;</span>,<span class="st">&#39;100103&#39;</span>,<span class="st">&#39;100303&#39;</span>,<span class="st">&#39;230616&#39;</span>,<span class="st">&#39;230618&#39;</span>,<span class="st">&#39;230283&#39;</span>,<span class="st">&#39;231002&#39;</span>,<span class="st">&#39;230969&#39;</span> ,<span class="st">&#39;230408&#39;</span>,<span class="st">&#39;230869&#39;</span>,<span class="st">&#39;230926&#39;</span>,<span class="st">&#39;230909&#39;</span>,<span class="st">&#39;230928&#39;</span>)) <span class="kw">then</span> a.uid <span class="kw">end</span>) <span class="kw">as</span> <span class="kw">all</span>
+
+<span class="kw">from</span>
+( <span class="kw">select</span> a1.uid
+    <span class="kw">from</span>
+    (<span class="kw">select</span> guest_id <span class="kw">as</span> <span class="fu">uid</span>
+    <span class="kw">from</span> ods_wls_guest_login
+    <span class="kw">where</span> dt = <span class="st">&#39;20171029&#39;</span>
+    <span class="kw">and</span> <span class="kw">MODE</span> <span class="kw">in</span> (<span class="st">&#39;REGISTER&#39;</span>)
+    <span class="kw">and</span> <span class="kw">mode</span> <span class="kw">not</span> <span class="kw">in</span> (<span class="st">&#39;TRANS&#39;</span>)
+    <span class="kw">and</span> wm <span class="kw">not</span> <span class="kw">in</span> (<span class="st">&#39;8605_2003&#39;</span>,<span class="st">&#39;4209_8001&#39;</span>,<span class="st">&#39;90027_90052&#39;</span>)
+    <span class="kw">and</span> wfrom <span class="kw">like</span> <span class="st">&#39;10%&#39;</span>
+    )a1
+    <span class="kw">left</span> <span class="kw">outer</span> <span class="kw">join</span>
+    (<span class="kw">select</span> guest_id <span class="kw">as</span> <span class="fu">uid</span>
+    <span class="kw">from</span> ods_wls_guest_login
+    <span class="kw">where</span> dt = <span class="st">&#39;20171029&#39;</span>
+    <span class="kw">and</span> <span class="kw">mode</span>  <span class="kw">in</span> (<span class="st">&#39;TRANS&#39;</span>)
+    <span class="kw">and</span> wm <span class="kw">not</span> <span class="kw">in</span> (<span class="st">&#39;8605_2003&#39;</span>,<span class="st">&#39;4209_8001&#39;</span>,<span class="st">&#39;90027_90052&#39;</span>)
+    <span class="kw">and</span> wfrom <span class="kw">like</span> <span class="st">&#39;10%&#39;</span>
+    )b1 <span class="kw">on</span> a1.uid = b1.uid
+    <span class="kw">where</span> b1.uid  <span class="kw">is</span> <span class="kw">null</span>
+)a
+<span class="kw">left</span> <span class="kw">outer</span> <span class="kw">join</span>
+(<span class="kw">select</span> <span class="fu">uid</span>,appid,interface_id,extend2
+    <span class="kw">from</span> ods_tblog_expo
+    <span class="kw">where</span> dt = <span class="st">&#39;20171029&#39;</span>
+)b <span class="kw">on</span> a.uid = b.uid
+    <span class="kw">left</span> <span class="kw">outer</span> <span class="kw">join</span>
+(<span class="kw">select</span> appid <span class="kw">as</span> apid,is_weibo,app_class_code
+    <span class="kw">from</span> ods_dim_appkey
+    <span class="kw">where</span> dt = <span class="st">&#39;20171029&#39;</span>
+)c <span class="kw">on</span> b.appid = c.apid</code></pre></div>
+</div>
+<div id="section-4.11" class="section level2">
+<h2><span class="header-section-number">4.11</span> 点赞分享<font color=red>中位数</font></h2>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> t2.actv_freq,
+       <span class="fu">avg</span>(like_cnt),
+       <span class="fu">avg</span>(<span class="kw">SHARE</span>),
+       percentile(<span class="fu">cast</span>(like_cnt <span class="kw">as</span> BIGINT), <span class="fl">0.5</span>),
+       percentile(<span class="fu">cast</span>(<span class="kw">SHARE</span> <span class="kw">as</span> BIGINT), <span class="fl">0.5</span>)
+<span class="kw">FROM</span>
+    (<span class="kw">SELECT</span> <span class="fu">uid</span>
+     <span class="kw">FROM</span> tmp_weibo_usergrowth_zz_uid
+     <span class="kw">WHERE</span> dt = <span class="st">&#39;20171210&#39;</span>) t1
+<span class="kw">LEFT</span> <span class="kw">JOIN</span>
+    (<span class="kw">SELECT</span> <span class="fu">uid</span>,
+            actv_freq
+     <span class="kw">FROM</span> mds_bhv_user_active_month_stat
+     <span class="kw">WHERE</span> dt = <span class="st">&#39;20171211&#39;</span>
+     <span class="kw">AND</span> mobile_actv_days &gt; <span class="dv">0</span>
+         <span class="kw">AND</span> stat_type = <span class="st">&#39;2&#39;</span>
+     <span class="kw">GROUP</span> <span class="kw">BY</span> <span class="fu">uid</span>,
+              actv_freq) t2 <span class="kw">ON</span> t1.uid = t2.uid
+<span class="kw">LEFT</span> <span class="kw">JOIN</span>
+    (<span class="kw">SELECT</span> <span class="fu">uid</span>,
+            <span class="fu">count</span>(*) like_cnt
+     <span class="kw">FROM</span> mds_bhv_like
+     <span class="kw">WHERE</span> dt=<span class="st">&#39;20171210&#39;</span>
+         <span class="kw">AND</span> MODE=<span class="dv">1</span>
+     <span class="kw">GROUP</span> <span class="kw">BY</span> <span class="fu">uid</span>) t3 <span class="kw">ON</span> t1.uid = t3.uid
+<span class="kw">LEFT</span> <span class="kw">JOIN</span>
+    (<span class="kw">SELECT</span> <span class="fu">uid</span>,
+            <span class="fu">count</span>(*) <span class="kw">AS</span> <span class="kw">SHARE</span>
+     <span class="kw">FROM</span> ods_wls_encode_bhv
+     <span class="kw">WHERE</span> dt=<span class="st">&#39;20171210&#39;</span>
+         <span class="kw">AND</span> act=<span class="st">&#39;other&#39;</span>
+         <span class="kw">AND</span> action <span class="kw">IN</span> (<span class="st">&#39;37&#39;</span>,
+                        <span class="st">&#39;38&#39;</span>,
+                        <span class="st">&#39;298&#39;</span>,
+                        <span class="st">&#39;299&#39;</span>,
+                        <span class="st">&#39;370&#39;</span>,
+                        <span class="st">&#39;371&#39;</span>,
+                        <span class="st">&#39;700&#39;</span>,
+                        <span class="st">&#39;682&#39;</span>)
+     <span class="kw">GROUP</span> <span class="kw">BY</span> <span class="fu">uid</span>) t4 <span class="kw">ON</span> t1.uid = t4.uid
+<span class="kw">GROUP</span> <span class="kw">BY</span> t2.actv_freq</code></pre></div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="topspeed.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="applications.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/03-method.Rmd",
+"text": "Edit"
+},
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

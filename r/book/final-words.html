@@ -5,28 +5,27 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>A Minimal Book Example</title>
-  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
-  <meta name="description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
-  <meta name="generator" content="bookdown 0.3.5 and GitBook 2.6.7">
+  <title>A Minimal Wiki Example</title>
+  <meta name="description" content="This is a minimal example of wiki using the bookdown package to write a book. The output format for this example is bookdown::gitbook.">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
-  <meta property="og:title" content="A Minimal Book Example" />
+  <meta property="og:title" content="A Minimal Wiki Example" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta property="og:description" content="This is a minimal example of wiki using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="A Minimal Book Example" />
+  <meta name="twitter:title" content="A Minimal Wiki Example" />
   
-  <meta name="twitter:description" content="This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
+  <meta name="twitter:description" content="This is a minimal example of wiki using the bookdown package to write a book. The output format for this example is bookdown::gitbook." />
   
 
 <meta name="author" content="Qi Zou">
 
 
-<meta name="date" content="2016-12-16">
+<meta name="date" content="2018-03-09">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -35,7 +34,6 @@
   
 <link rel="prev" href="applications.html">
 <link rel="next" href="references.html">
-
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -49,11 +47,6 @@
 
 
 
-<script src="libs/htmlwidgets-0.8/htmlwidgets.js"></script>
-<script src="libs/datatables-binding-0.2/datatables.js"></script>
-<link href="libs/dt-core-1.10.12/css/jquery.dataTables.min.css" rel="stylesheet" />
-<link href="libs/dt-core-1.10.12/css/jquery.dataTables.extra.css" rel="stylesheet" />
-<script src="libs/dt-core-1.10.12/js/jquery.dataTables.min.js"></script>
 
 
 <style type="text/css">
@@ -110,15 +103,53 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li><a href="./">A Minimal Book Example</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prerequisites</a></li>
-<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
-<li class="chapter" data-level="2" data-path="literature.html"><a href="literature.html"><i class="fa fa-check"></i><b>2</b> Literature</a></li>
-<li class="chapter" data-level="3" data-path="methods.html"><a href="methods.html"><i class="fa fa-check"></i><b>3</b> Methods</a></li>
-<li class="chapter" data-level="4" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>4</b> Applications</a><ul>
-<li class="chapter" data-level="4.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>4.1</b> Example one</a></li>
-<li class="chapter" data-level="4.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>4.2</b> Example two</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Prerequisites</a></li>
+<li class="chapter" data-level="2" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>2</b> Introduction</a></li>
+<li class="chapter" data-level="3" data-path="topspeed.html"><a href="topspeed.html"><i class="fa fa-check"></i><b>3</b> Topspeed</a><ul>
+<li class="chapter" data-level="3.1" data-path="topspeed.html"><a href="topspeed.html#section-3.1"><i class="fa fa-check"></i><b>3.1</b> 极速版数据仓库</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="topspeed.html"><a href="topspeed.html#section-3.1.1"><i class="fa fa-check"></i><b>3.1.1</b> 极速版打码日志</a></li>
+<li class="chapter" data-level="3.1.2" data-path="topspeed.html"><a href="topspeed.html#section-3.1.2"><i class="fa fa-check"></i><b>3.1.2</b> 极速版月活表(每日全量表)</a></li>
+<li class="chapter" data-level="3.1.3" data-path="topspeed.html"><a href="topspeed.html#section-3.1.3"><i class="fa fa-check"></i><b>3.1.3</b> 极速版访客登录表(每日全量表)</a></li>
+<li class="chapter" data-level="3.1.4" data-path="topspeed.html"><a href="topspeed.html#section-3.1.4"><i class="fa fa-check"></i><b>3.1.4</b> 极速版访客登录表(每日增量表)</a></li>
+<li class="chapter" data-level="3.1.5" data-path="topspeed.html"><a href="topspeed.html#section-3.1.5"><i class="fa fa-check"></i><b>3.1.5</b> 用户类型表（每天增量表）</a></li>
+<li class="chapter" data-level="3.1.6" data-path="topspeed.html"><a href="topspeed.html#section-3.1.6"><i class="fa fa-check"></i><b>3.1.6</b> 极速版用户注册信息表(每日增量表)</a></li>
+<li class="chapter" data-level="3.1.7" data-path="topspeed.html"><a href="topspeed.html#section-3.1.7"><i class="fa fa-check"></i><b>3.1.7</b> 建表信息</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>5</b> Final Words</a></li>
+<li class="chapter" data-level="3.2" data-path="topspeed.html"><a href="topspeed.html#section-3.2"><i class="fa fa-check"></i><b>3.2</b> 极速版邮件调度</a></li>
+<li class="chapter" data-level="3.3" data-path="topspeed.html"><a href="topspeed.html#fid"><i class="fa fa-check"></i><b>3.3</b> 极速版FID</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="topspeed.html"><a href="topspeed.html#section-3.3.1"><i class="fa fa-check"></i><b>3.3.1</b> 关注</a></li>
+<li class="chapter" data-level="3.3.2" data-path="topspeed.html"><a href="topspeed.html#section-3.3.2"><i class="fa fa-check"></i><b>3.3.2</b> 热门</a></li>
+<li class="chapter" data-level="3.3.3" data-path="topspeed.html"><a href="topspeed.html#section-3.3.3"><i class="fa fa-check"></i><b>3.3.3</b> 视频</a></li>
+<li class="chapter" data-level="3.3.4" data-path="topspeed.html"><a href="topspeed.html#section-3.3.4"><i class="fa fa-check"></i><b>3.3.4</b> 页面</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="topspeed.html"><a href="topspeed.html#action"><i class="fa fa-check"></i><b>3.4</b> 极速版action</a></li>
+<li class="chapter" data-level="3.5" data-path="topspeed.html"><a href="topspeed.html#section-3.5"><i class="fa fa-check"></i><b>3.5</b> 极速版互动（转评赞）</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="freq-sql.html"><a href="freq-sql.html"><i class="fa fa-check"></i><b>4</b> Freq Sql</a><ul>
+<li class="chapter" data-level="4.1" data-path="freq-sql.html"><a href="freq-sql.html#push"><i class="fa fa-check"></i><b>4.1</b> push下发条数</a></li>
+<li class="chapter" data-level="4.2" data-path="freq-sql.html"><a href="freq-sql.html#dau"><i class="fa fa-check"></i><b>4.2</b> DAU</a><ul>
+<li class="chapter" data-level="4.2.1" data-path="freq-sql.html"><a href="freq-sql.html#dau-1"><i class="fa fa-check"></i><b>4.2.1</b> DAU</a></li>
+<li class="chapter" data-level="4.2.2" data-path="freq-sql.html"><a href="freq-sql.html#dau-"><i class="fa fa-check"></i><b>4.2.2</b> Dau 补全脚本</a></li>
+</ul></li>
+<li class="chapter" data-level="4.3" data-path="freq-sql.html"><a href="freq-sql.html#section-4.3"><i class="fa fa-check"></i><b>4.3</b> 点击数</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="freq-sql.html"><a href="freq-sql.html#feed"><i class="fa fa-check"></i><b>4.3.1</b> 主feed的互动数</a></li>
+<li class="chapter" data-level="4.3.2" data-path="freq-sql.html"><a href="freq-sql.html#section-4.3.2"><i class="fa fa-check"></i><b>4.3.2</b> 热门微博的互动数</a></li>
+<li class="chapter" data-level="4.3.3" data-path="freq-sql.html"><a href="freq-sql.html#section-4.3.3"><i class="fa fa-check"></i><b>4.3.3</b> 热门微博的点击数</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="freq-sql.html"><a href="freq-sql.html#luicode"><i class="fa fa-check"></i><b>4.4</b> 首次打开按luicode</a></li>
+<li class="chapter" data-level="4.5" data-path="freq-sql.html"><a href="freq-sql.html#section-4.5"><i class="fa fa-check"></i><b>4.5</b> 在线时长</a></li>
+<li class="chapter" data-level="4.6" data-path="freq-sql.html"><a href="freq-sql.html#push"><i class="fa fa-check"></i><b>4.6</b> 可push库地理位置</a></li>
+<li class="chapter" data-level="4.7" data-path="freq-sql.html"><a href="freq-sql.html#section-4.7"><i class="fa fa-check"></i><b>4.7</b> 用户类型</a></li>
+<li class="chapter" data-level="4.8" data-path="freq-sql.html"><a href="freq-sql.html#section-4.8"><i class="fa fa-check"></i><b>4.8</b> 发博转发评论<font color=red>中位数</font></a></li>
+<li class="chapter" data-level="4.9" data-path="freq-sql.html"><a href="freq-sql.html#section-4.9"><i class="fa fa-check"></i><b>4.9</b> 主要行为</a></li>
+<li class="chapter" data-level="4.10" data-path="freq-sql.html"><a href="freq-sql.html#section-4.10"><i class="fa fa-check"></i><b>4.10</b> 曝光</a></li>
+<li class="chapter" data-level="4.11" data-path="freq-sql.html"><a href="freq-sql.html#section-4.11"><i class="fa fa-check"></i><b>4.11</b> 点赞分享<font color=red>中位数</font></a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="applications.html"><a href="applications.html"><i class="fa fa-check"></i><b>5</b> Applications</a><ul>
+<li class="chapter" data-level="5.1" data-path="applications.html"><a href="applications.html#example-one"><i class="fa fa-check"></i><b>5.1</b> Example one</a></li>
+<li class="chapter" data-level="5.2" data-path="applications.html"><a href="applications.html#example-two"><i class="fa fa-check"></i><b>5.2</b> Example two</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="final-words.html"><a href="final-words.html"><i class="fa fa-check"></i><b>6</b> Final Words</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -132,7 +163,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Book Example</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A Minimal Wiki Example</a>
           </h1>
         </div>
 
@@ -141,7 +172,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
             <section class="normal" id="section-">
 <div id="final-words" class="section level1">
-<h1><span class="header-section-number">Chapter 5</span> Final Words</h1>
+<h1><span class="header-section-number">Chapter 6</span> Final Words</h1>
 <p>We have finished a nice book.</p>
 
 </div>
@@ -151,8 +182,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
         </div>
       </div>
 <a href="applications.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page""><i class="fa fa-angle-right"></i></a>
-
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
@@ -161,17 +193,18 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
 <script>
-require(["gitbook"], function(gitbook) {
+gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
 "sharing": {
 "github": false,
 "facebook": true,
 "twitter": true,
 "google": false,
+"linkedin": false,
 "weibo": false,
 "instapper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -182,7 +215,7 @@ gitbook.start({
 "link": "https://github.com/rstudio/bookdown-demo/edit/master/05-summary.Rmd",
 "text": "Edit"
 },
-"download": null,
+"download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
 "toc": {
 "collapse": "subsection"
 }
@@ -195,9 +228,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
-    if (location.protocol !== "file:" && /^https?:/.test(script.src))
-      script.src  = script.src.replace(/^https?:/, '');
+    var src = "";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
