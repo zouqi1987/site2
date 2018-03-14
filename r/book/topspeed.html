@@ -25,7 +25,7 @@
 <meta name="author" content="Qi Zou">
 
 
-<meta name="date" content="2018-03-09">
+<meta name="date" content="2018-03-14">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -115,15 +115,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="3.1.6" data-path="topspeed.html"><a href="topspeed.html#section-3.1.6"><i class="fa fa-check"></i><b>3.1.6</b> 极速版用户注册信息表(每日增量表)</a></li>
 <li class="chapter" data-level="3.1.7" data-path="topspeed.html"><a href="topspeed.html#section-3.1.7"><i class="fa fa-check"></i><b>3.1.7</b> 建表信息</a></li>
 </ul></li>
-<li class="chapter" data-level="3.2" data-path="topspeed.html"><a href="topspeed.html#section-3.2"><i class="fa fa-check"></i><b>3.2</b> 极速版邮件调度</a></li>
-<li class="chapter" data-level="3.3" data-path="topspeed.html"><a href="topspeed.html#fid"><i class="fa fa-check"></i><b>3.3</b> 极速版FID</a><ul>
-<li class="chapter" data-level="3.3.1" data-path="topspeed.html"><a href="topspeed.html#section-3.3.1"><i class="fa fa-check"></i><b>3.3.1</b> 关注</a></li>
-<li class="chapter" data-level="3.3.2" data-path="topspeed.html"><a href="topspeed.html#section-3.3.2"><i class="fa fa-check"></i><b>3.3.2</b> 热门</a></li>
-<li class="chapter" data-level="3.3.3" data-path="topspeed.html"><a href="topspeed.html#section-3.3.3"><i class="fa fa-check"></i><b>3.3.3</b> 视频</a></li>
-<li class="chapter" data-level="3.3.4" data-path="topspeed.html"><a href="topspeed.html#section-3.3.4"><i class="fa fa-check"></i><b>3.3.4</b> 页面</a></li>
+<li class="chapter" data-level="3.2" data-path="topspeed.html"><a href="topspeed.html#section-3.2"><i class="fa fa-check"></i><b>3.2</b> 极速版数仓字典</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="topspeed.html"><a href="topspeed.html#section-3.2.1"><i class="fa fa-check"></i><b>3.2.1</b> 极速版打码日志(每日增量表)</a></li>
+<li class="chapter" data-level="3.2.2" data-path="topspeed.html"><a href="topspeed.html#-1"><i class="fa fa-check"></i><b>3.2.2</b> 极速版用户注册信息表(每日增量表)</a></li>
 </ul></li>
-<li class="chapter" data-level="3.4" data-path="topspeed.html"><a href="topspeed.html#action"><i class="fa fa-check"></i><b>3.4</b> 极速版action</a></li>
-<li class="chapter" data-level="3.5" data-path="topspeed.html"><a href="topspeed.html#section-3.5"><i class="fa fa-check"></i><b>3.5</b> 极速版互动（转评赞）</a></li>
+<li class="chapter" data-level="3.3" data-path="topspeed.html"><a href="topspeed.html#section-3.3"><i class="fa fa-check"></i><b>3.3</b> 极速版邮件调度</a></li>
+<li class="chapter" data-level="3.4" data-path="topspeed.html"><a href="topspeed.html#fid"><i class="fa fa-check"></i><b>3.4</b> 极速版FID</a><ul>
+<li class="chapter" data-level="3.4.1" data-path="topspeed.html"><a href="topspeed.html#section-3.4.1"><i class="fa fa-check"></i><b>3.4.1</b> 关注</a></li>
+<li class="chapter" data-level="3.4.2" data-path="topspeed.html"><a href="topspeed.html#section-3.4.2"><i class="fa fa-check"></i><b>3.4.2</b> 热门</a></li>
+<li class="chapter" data-level="3.4.3" data-path="topspeed.html"><a href="topspeed.html#section-3.4.3"><i class="fa fa-check"></i><b>3.4.3</b> 视频</a></li>
+<li class="chapter" data-level="3.4.4" data-path="topspeed.html"><a href="topspeed.html#section-3.4.4"><i class="fa fa-check"></i><b>3.4.4</b> 页面</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="topspeed.html"><a href="topspeed.html#action"><i class="fa fa-check"></i><b>3.5</b> 极速版action</a></li>
+<li class="chapter" data-level="3.6" data-path="topspeed.html"><a href="topspeed.html#section-3.6"><i class="fa fa-check"></i><b>3.6</b> 极速版互动（转评赞）</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="freq-sql.html"><a href="freq-sql.html"><i class="fa fa-check"></i><b>4</b> Freq Sql</a><ul>
 <li class="chapter" data-level="4.1" data-path="freq-sql.html"><a href="freq-sql.html#push"><i class="fa fa-check"></i><b>4.1</b> push下发条数</a></li>
@@ -410,235 +414,389 @@ dt_30=`date -d &quot;31 days ago&quot; +%Y%m%d`
 </div>
 </div>
 <div id="section-3.2" class="section level2">
-<h2><span class="header-section-number">3.2</span> 极速版邮件调度</h2>
-<pre><code>#!/bin/sh
+<h2><span class="header-section-number">3.2</span> 极速版数仓字典</h2>
+<div id="section-3.2.1" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> 极速版打码日志(每日增量表)</h3>
+<table>
+<thead>
+<tr class="header">
+<th>字段名</th>
+<th>字段描述</th>
+<th>数据类型</th>
+<th>数据实例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>day_key</td>
+<td>时间</td>
+<td>string</td>
+<td>23:00:00</td>
+<td>行为发生时间</td>
+</tr>
+<tr class="even">
+<td>uid</td>
+<td>UID</td>
+<td>string</td>
+<td>1281231231</td>
+<td>13位为访客10位为正式用户</td>
+</tr>
+<tr class="odd">
+<td>aid</td>
+<td>设备aid</td>
+<td>string</td>
+<td>　</td>
+<td>　</td>
+</tr>
+<tr class="even">
+<td>action</td>
+<td>行为码</td>
+<td>string</td>
+<td>97</td>
+<td>　</td>
+</tr>
+<tr class="odd">
+<td>uicode</td>
+<td>页面uicode</td>
+<td>string</td>
+<td>10000011</td>
+<td>　</td>
+</tr>
+<tr class="even">
+<td>luicode</td>
+<td>上级页面uidcode</td>
+<td>string</td>
+<td>10000011</td>
+<td>　</td>
+</tr>
+<tr class="odd">
+<td>wm</td>
+<td>wm值</td>
+<td>string</td>
+<td>4209_8001</td>
+<td>　</td>
+</tr>
+<tr class="even">
+<td>oldwm</td>
+<td>初始wm值</td>
+<td>string</td>
+<td>4209_8002</td>
+<td>　</td>
+</tr>
+<tr class="odd">
+<td>extend</td>
+<td>扩展字段</td>
+<td>string</td>
+<td>　</td>
+<td>　</td>
+</tr>
+<tr class="even">
+<td>fid</td>
+<td>　</td>
+<td>string</td>
+<td>　</td>
+<td>　</td>
+</tr>
+<tr class="odd">
+<td>lfid</td>
+<td>　</td>
+<td>string</td>
+<td>　</td>
+<td>　</td>
+</tr>
+<tr class="even">
+<td>from_val</td>
+<td>from值</td>
+<td>string</td>
+<td>1041095010</td>
+<td>　</td>
+</tr>
+<tr class="odd">
+<td>dt</td>
+<td>时间</td>
+<td>string</td>
+<td>20131-11-08</td>
+<td>　</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="-1" class="section level3">
+<h3><span class="header-section-number">3.2.2</span> 极速版用户注册信息表(每日增量表)</h3>
+<table>
+<thead>
+<tr class="header">
+<th>字段名</th>
+<th>字段描述</th>
+<th>数据类型</th>
+<th>数据实例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>uid</td>
+<td>用户uid</td>
+<td>String</td>
+<td>10000011</td>
+<td>有行为码2358的用户</td>
+</tr>
+<tr class="even">
+<td>aid</td>
+<td>设备aid</td>
+<td>String</td>
+<td>01AlwhaY0yxNx4TuiTIw2jweTC-OVGqSjZLjWr4qiOQrwZMRM.</td>
+<td>　</td>
+</tr>
+<tr class="odd">
+<td>reg_time</td>
+<td>注册时间</td>
+<td>String</td>
+<td>41643.95833</td>
+<td>　</td>
+</tr>
+<tr class="even">
+<td>dt</td>
+<td>时间</td>
+<td></td>
+<td>20131118</td>
+<td>　</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="section-3.3" class="section level2">
+<h2><span class="header-section-number">3.3</span> 极速版邮件调度</h2>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql">#!/bin/sh
 
-day=`date -d &quot;1 day ago&quot; +%Y%m%d`
-last_1=`date -d &quot;${day} 1 days ago&quot; +%Y%m%d`
+day=`date -d <span class="ot">&quot;1 day ago&quot;</span> +%Y%m%d`
+last_1=`date -d <span class="ot">&quot;${day} 1 days ago&quot;</span> +%Y%m%d`
 
-hive -e&quot;
+hive -e<span class="ot">&quot;</span>
 
 ## 新增安装量和留存
-SELECT oldwm,
-       count(t1.aid) AS newdevice_cnt,
-       count(t2.aid) AS tmr_retent_cnt,
-       &#39;${day}&#39;
-FROM
-  (SELECT a.aid,
+<span class="kw">SELECT</span> oldwm,
+       <span class="fu">count</span>(t1.aid) <span class="kw">AS</span> newdevice_cnt,
+       <span class="fu">count</span>(t2.aid) <span class="kw">AS</span> tmr_retent_cnt,
+       <span class="st">&#39;${day}&#39;</span>
+<span class="kw">FROM</span>
+  (<span class="kw">SELECT</span> a.aid,
           a.oldwm
-   FROM
-     (SELECT aid,
+   <span class="kw">FROM</span>
+     (<span class="kw">SELECT</span> aid,
              oldwm
-      FROM weibo_lite_ods1
-      WHERE dt = &#39;${last_1}&#39;
-      GROUP BY aid,
+      <span class="kw">FROM</span> weibo_lite_ods1
+      <span class="kw">WHERE</span> dt = <span class="st">&#39;${last_1}&#39;</span>
+      <span class="kw">GROUP</span> <span class="kw">BY</span> aid,
                oldwm) a
-   LEFT JOIN
-     (SELECT aid
-      FROM weibo_lite_ods1
-      WHERE dt &lt; &#39;${last_1}&#39;
-      GROUP BY aid) b ON a.aid = b.aid
-   WHERE b.aid IS NULL) t1
-LEFT JOIN
-  (SELECT aid
-   FROM weibo_lite_ods1
-   WHERE dt = &#39;${day}&#39;
-   GROUP BY aid) t2 ON t1.aid = t2.aid
-GROUP BY oldwm
+   <span class="kw">LEFT</span> <span class="kw">JOIN</span>
+     (<span class="kw">SELECT</span> aid
+      <span class="kw">FROM</span> weibo_lite_ods1
+      <span class="kw">WHERE</span> dt &lt; <span class="st">&#39;${last_1}&#39;</span>
+      <span class="kw">GROUP</span> <span class="kw">BY</span> aid) b <span class="kw">ON</span> a.aid = b.aid
+   <span class="kw">WHERE</span> b.aid <span class="kw">IS</span> <span class="kw">NULL</span>) t1
+<span class="kw">LEFT</span> <span class="kw">JOIN</span>
+  (<span class="kw">SELECT</span> aid
+   <span class="kw">FROM</span> weibo_lite_ods1
+   <span class="kw">WHERE</span> dt = <span class="st">&#39;${day}&#39;</span>
+   <span class="kw">GROUP</span> <span class="kw">BY</span> aid) t2 <span class="kw">ON</span> t1.aid = t2.aid
+<span class="kw">GROUP</span> <span class="kw">BY</span> oldwm
 
 
 ## feed 刷新次数/人数
-SELECT count(uid) AS refresh_pv,
-       count(distinct uid) AS refresh_uv,
-       TYPE,
-       &#39;${day}&#39;
-FROM
-  (SELECT uid,
-          CASE
-              WHEN ((fid LIKE &#39;10001%&#39;
-                    OR fid LIKE &#39;10009%&#39;
-                    OR fid LIKE &#39;10010%&#39;
-                    OR fid LIKE &#39;10013%&#39;
-                    OR fid = &#39;friend_timeline&#39;) AND uicode = &#39;10000613&#39;) THEN &#39;guanzhu&#39;
-              WHEN fid IN (&#39;102803&#39;,
-                           &#39;same_city&#39;,
-                           &#39;102803_ctg1_7968_-_ctg1_7968&#39;,
-                           &#39;102803_ctg1_4388_-_ctg1_4388&#39;,
-                           &#39;102803_ctg1_1988_-_ctg1_1988&#39;,
-                           &#39;102803_ctg1_4288_-_ctg1_4288&#39;,
-                           &#39;102803_ctg1_4188_-_ctg1_4188&#39;,
-                           &#39;102803_ctg1_5088_-_ctg1_5088&#39;,
-                           &#39;102803_ctg1_1388_-_ctg1_1388&#39;,
-                           &#39;102803_ctg1_2288_-_ctg1_2288&#39;,
-                           &#39;102803_ctg1_5188_-_ctg1_5188&#39;,
-                           &#39;102803_ctg1_3288_-_ctg1_3288&#39;,
-                           &#39;102803_ctg1_4888_-_ctg1_4888&#39;,
-                           &#39;102803_ctg1_6288_-_ctg1_6288&#39;,
-                           &#39;102803_ctg1_2088_-_ctg1_2088&#39;,
-                           &#39;102803_ctg1_1288_-_ctg1_1288&#39;,
-                           &#39;102803_ctg1_5288_-_ctg1_5288&#39;,
-                           &#39;102803_ctg1_2388_-_ctg1_2388&#39;,
-                           &#39;102803_ctg1_6688_-_ctg1_6688&#39;,
-                           &#39;102803_ctg1_6388_-_ctg1_6388&#39;,
-                           &#39;102803_ctg1_6788_-_ctg1_6788&#39;,
-                           &#39;102803_ctg1_2688_-_ctg1_2688&#39;,
-                           &#39;102803_ctg1_4988_-_ctg1_4988&#39;,
-                           &#39;102803_ctg1_2488_-_ctg1_2488&#39;,
-                           &#39;102803_ctg1_4588_-_ctg1_4588&#39;,
-                           &#39;102803_ctg1_1488_-_ctg1_1488&#39;,
-                           &#39;102803_ctg1_5988_-_ctg1_5988&#39;,
-                           &#39;102803_ctg1_4788_-_ctg1_4788&#39;,
-                           &#39;102803_ctg1_4688_-_ctg1_4688&#39;,
-                           &#39;102803_ctg1_1588_-_ctg1_1588&#39;,
-                           &#39;102803_ctg1_2788_-_ctg1_2788&#39;,
-                           &#39;102803_ctg1_4488_-_ctg1_4488&#39;,
-                           &#39;102803_ctg1_7388_-_ctg1_7388&#39;,
-                           &#39;102803_ctg1_7088_-_ctg1_7088&#39;,
-                           &#39;102803_ctg1_5388_-_ctg1_5388&#39;,
-                           &#39;102803_ctg1_2588_-_ctg1_2588&#39;,
-                           &#39;102803_ctg1_5488_-_ctg1_5488&#39;,
-                           &#39;102803_ctg1_1688_-_ctg1_1688&#39;,
-                           &#39;102803_ctg1_5888_-_ctg1_5888&#39;,
-                           &#39;102803_ctg1_5588_-_ctg1_5588&#39;,
-                           &#39;102803_ctg1_6488_-_ctg1_6488&#39;,
-                           &#39;102803_ctg1_2188_-_ctg1_2188&#39;,
-                           &#39;102803_ctg1_6588_-_ctg1_6588&#39;,
-                           &#39;102803_ctg1_5688_-_ctg1_5688&#39;,
-                           &#39;102803_ctg1_6988_-_ctg1_6988&#39;,
-                           &#39;102803_ctg1_5788_-_ctg1_5788&#39;,
-                           &#39;102803_ctg1_3188_-_ctg1_3188&#39;,
-                           &#39;102803_ctg1_8788_-_ctg1_8788&#39;,
-                           &#39;102803_ctg1_8189_-_ctg1_8189&#39;,
-                           &#39;102803_ctg1_1788_-_ctg1_1788&#39;,
-                           &#39;102803_ctg1_7188_-_ctg1_7188&#39;,
-                           &#39;102803_ctg1_8999_-_ctg1_8999_home&#39;,
-                           &#39;102803_ctg1_8998_-_ctg1_8998&#39;,
-                           &#39;102803_ctg1_8997_-_ctg1_8997&#39;,
-                           &#39;102803_ctg1_9999_-_ctg1_9999&#39;,
-                           &#39;102803_ctg1_8899_-_ctg1_8899&#39;,
-                           &#39;102803_ctg1_8799_-_ctg1_8799&#39;,
-                           &#39;102803_ctg1_8698_-_ctg1_8698&#39;) THEN &#39;remen&#39;
-              WHEN fid IN (&#39;231159&#39;,
-                           &#39;231159_video_tag_1&#39;,
-                           &#39;231159_video_tag_2&#39;,
-                           &#39;231159_video_tag_14&#39;,
-                           &#39;231159_video_tag_15&#39;,
-                           &#39;231159_video_tag_3&#39;,
-                           &#39;231159_video_tag_4&#39;,
-                           &#39;231159_video_tag_5&#39;,
-                           &#39;231159_video_tag_7&#39;,
-                           &#39;231159_video_tag_8&#39;,
-                           &#39;231159_video_tag_16&#39;) THEN &#39;shipin&#39;
-              ELSE NULL
-          END AS TYPE
-   FROM weibo_lite_ods1
-   WHERE dt = &#39;${day}&#39;
-     AND action = &#39;2353&#39;)t1
-GROUP BY TYPE
+<span class="kw">SELECT</span> <span class="fu">count</span>(<span class="fu">uid</span>) <span class="kw">AS</span> refresh_pv,
+       <span class="fu">count</span>(<span class="kw">distinct</span> <span class="fu">uid</span>) <span class="kw">AS</span> refresh_uv,
+       <span class="kw">TYPE</span>,
+       <span class="st">&#39;${day}&#39;</span>
+<span class="kw">FROM</span>
+  (<span class="kw">SELECT</span> <span class="fu">uid</span>,
+          <span class="kw">CASE</span>
+              <span class="kw">WHEN</span> ((fid <span class="kw">LIKE</span> <span class="st">&#39;10001%&#39;</span>
+                    <span class="kw">OR</span> fid <span class="kw">LIKE</span> <span class="st">&#39;10009%&#39;</span>
+                    <span class="kw">OR</span> fid <span class="kw">LIKE</span> <span class="st">&#39;10010%&#39;</span>
+                    <span class="kw">OR</span> fid <span class="kw">LIKE</span> <span class="st">&#39;10013%&#39;</span>
+                    <span class="kw">OR</span> fid = <span class="st">&#39;friend_timeline&#39;</span>) <span class="kw">AND</span> uicode = <span class="st">&#39;10000613&#39;</span>) <span class="kw">THEN</span> <span class="st">&#39;guanzhu&#39;</span>
+              <span class="kw">WHEN</span> fid <span class="kw">IN</span> (<span class="st">&#39;102803&#39;</span>,
+                           <span class="st">&#39;same_city&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_7968_-_ctg1_7968&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_4388_-_ctg1_4388&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_1988_-_ctg1_1988&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_4288_-_ctg1_4288&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_4188_-_ctg1_4188&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_5088_-_ctg1_5088&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_1388_-_ctg1_1388&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_2288_-_ctg1_2288&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_5188_-_ctg1_5188&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_3288_-_ctg1_3288&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_4888_-_ctg1_4888&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_6288_-_ctg1_6288&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_2088_-_ctg1_2088&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_1288_-_ctg1_1288&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_5288_-_ctg1_5288&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_2388_-_ctg1_2388&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_6688_-_ctg1_6688&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_6388_-_ctg1_6388&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_6788_-_ctg1_6788&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_2688_-_ctg1_2688&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_4988_-_ctg1_4988&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_2488_-_ctg1_2488&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_4588_-_ctg1_4588&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_1488_-_ctg1_1488&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_5988_-_ctg1_5988&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_4788_-_ctg1_4788&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_4688_-_ctg1_4688&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_1588_-_ctg1_1588&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_2788_-_ctg1_2788&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_4488_-_ctg1_4488&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_7388_-_ctg1_7388&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_7088_-_ctg1_7088&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_5388_-_ctg1_5388&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_2588_-_ctg1_2588&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_5488_-_ctg1_5488&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_1688_-_ctg1_1688&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_5888_-_ctg1_5888&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_5588_-_ctg1_5588&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_6488_-_ctg1_6488&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_2188_-_ctg1_2188&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_6588_-_ctg1_6588&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_5688_-_ctg1_5688&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_6988_-_ctg1_6988&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_5788_-_ctg1_5788&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_3188_-_ctg1_3188&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_8788_-_ctg1_8788&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_8189_-_ctg1_8189&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_1788_-_ctg1_1788&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_7188_-_ctg1_7188&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_8999_-_ctg1_8999_home&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_8998_-_ctg1_8998&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_8997_-_ctg1_8997&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_9999_-_ctg1_9999&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_8899_-_ctg1_8899&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_8799_-_ctg1_8799&#39;</span>,
+                           <span class="st">&#39;102803_ctg1_8698_-_ctg1_8698&#39;</span>) <span class="kw">THEN</span> <span class="st">&#39;remen&#39;</span>
+              <span class="kw">WHEN</span> fid <span class="kw">IN</span> (<span class="st">&#39;231159&#39;</span>,
+                           <span class="st">&#39;231159_video_tag_1&#39;</span>,
+                           <span class="st">&#39;231159_video_tag_2&#39;</span>,
+                           <span class="st">&#39;231159_video_tag_14&#39;</span>,
+                           <span class="st">&#39;231159_video_tag_15&#39;</span>,
+                           <span class="st">&#39;231159_video_tag_3&#39;</span>,
+                           <span class="st">&#39;231159_video_tag_4&#39;</span>,
+                           <span class="st">&#39;231159_video_tag_5&#39;</span>,
+                           <span class="st">&#39;231159_video_tag_7&#39;</span>,
+                           <span class="st">&#39;231159_video_tag_8&#39;</span>,
+                           <span class="st">&#39;231159_video_tag_16&#39;</span>) <span class="kw">THEN</span> <span class="st">&#39;shipin&#39;</span>
+              <span class="kw">ELSE</span> <span class="kw">NULL</span>
+          <span class="kw">END</span> <span class="kw">AS</span> <span class="kw">TYPE</span>
+   <span class="kw">FROM</span> weibo_lite_ods1
+   <span class="kw">WHERE</span> dt = <span class="st">&#39;${day}&#39;</span>
+     <span class="kw">AND</span> action = <span class="st">&#39;2353&#39;</span>)t1
+<span class="kw">GROUP</span> <span class="kw">BY</span> <span class="kw">TYPE</span>
 
 
 
-## 频道top 5
+## 频道top <span class="dv">5</span>
 
-SELECT cnt, fid, TYPE, &#39;${day}&#39;
-FROM
-(SELECT cnt, fid, TYPE, row_number() over (partition by TYPE order by cnt desc) as rn
-FROM
-(SELECT count(1) as cnt,
+<span class="kw">SELECT</span> cnt, fid, <span class="kw">TYPE</span>, <span class="st">&#39;${day}&#39;</span>
+<span class="kw">FROM</span>
+(<span class="kw">SELECT</span> cnt, fid, <span class="kw">TYPE</span>, <span class="fu">row_number</span>() <span class="kw">over</span> (<span class="kw">partition</span> <span class="kw">by</span> <span class="kw">TYPE</span> <span class="kw">order</span> <span class="kw">by</span> cnt <span class="kw">desc</span>) <span class="kw">as</span> rn
+<span class="kw">FROM</span>
+(<span class="kw">SELECT</span> <span class="fu">count</span>(<span class="dv">1</span>) <span class="kw">as</span> cnt,
                     fid,
-                    TYPE
-FROM
-(SELECT uid,
+                    <span class="kw">TYPE</span>
+<span class="kw">FROM</span>
+(<span class="kw">SELECT</span> <span class="fu">uid</span>,
        fid,
-       CASE
-           WHEN ((fid LIKE &#39;10001%&#39;
-                  OR fid LIKE &#39;10009%&#39;
-                  OR fid LIKE &#39;10010%&#39;
-                  OR fid LIKE &#39;10013%&#39;
-                  OR fid = &#39;friend_timeline&#39;)
-                 AND uicode = &#39;10000613&#39;) THEN &#39;guanzhu&#39;
-           WHEN fid IN (&#39;102803&#39;,
-                        &#39;same_city&#39;,
-                        &#39;102803_ctg1_7968_-_ctg1_7968&#39;,
-                        &#39;102803_ctg1_4388_-_ctg1_4388&#39;,
-                        &#39;102803_ctg1_1988_-_ctg1_1988&#39;,
-                        &#39;102803_ctg1_4288_-_ctg1_4288&#39;,
-                        &#39;102803_ctg1_4188_-_ctg1_4188&#39;,
-                        &#39;102803_ctg1_5088_-_ctg1_5088&#39;,
-                        &#39;102803_ctg1_1388_-_ctg1_1388&#39;,
-                        &#39;102803_ctg1_2288_-_ctg1_2288&#39;,
-                        &#39;102803_ctg1_5188_-_ctg1_5188&#39;,
-                        &#39;102803_ctg1_3288_-_ctg1_3288&#39;,
-                        &#39;102803_ctg1_4888_-_ctg1_4888&#39;,
-                        &#39;102803_ctg1_6288_-_ctg1_6288&#39;,
-                        &#39;102803_ctg1_2088_-_ctg1_2088&#39;,
-                        &#39;102803_ctg1_1288_-_ctg1_1288&#39;,
-                        &#39;102803_ctg1_5288_-_ctg1_5288&#39;,
-                        &#39;102803_ctg1_2388_-_ctg1_2388&#39;,
-                        &#39;102803_ctg1_6688_-_ctg1_6688&#39;,
-                        &#39;102803_ctg1_6388_-_ctg1_6388&#39;,
-                        &#39;102803_ctg1_6788_-_ctg1_6788&#39;,
-                        &#39;102803_ctg1_2688_-_ctg1_2688&#39;,
-                        &#39;102803_ctg1_4988_-_ctg1_4988&#39;,
-                        &#39;102803_ctg1_2488_-_ctg1_2488&#39;,
-                        &#39;102803_ctg1_4588_-_ctg1_4588&#39;,
-                        &#39;102803_ctg1_1488_-_ctg1_1488&#39;,
-                        &#39;102803_ctg1_5988_-_ctg1_5988&#39;,
-                        &#39;102803_ctg1_4788_-_ctg1_4788&#39;,
-                        &#39;102803_ctg1_4688_-_ctg1_4688&#39;,
-                        &#39;102803_ctg1_1588_-_ctg1_1588&#39;,
-                        &#39;102803_ctg1_2788_-_ctg1_2788&#39;,
-                        &#39;102803_ctg1_4488_-_ctg1_4488&#39;,
-                        &#39;102803_ctg1_7388_-_ctg1_7388&#39;,
-                        &#39;102803_ctg1_7088_-_ctg1_7088&#39;,
-                        &#39;102803_ctg1_5388_-_ctg1_5388&#39;,
-                        &#39;102803_ctg1_2588_-_ctg1_2588&#39;,
-                        &#39;102803_ctg1_5488_-_ctg1_5488&#39;,
-                        &#39;102803_ctg1_1688_-_ctg1_1688&#39;,
-                        &#39;102803_ctg1_5888_-_ctg1_5888&#39;,
-                        &#39;102803_ctg1_5588_-_ctg1_5588&#39;,
-                        &#39;102803_ctg1_6488_-_ctg1_6488&#39;,
-                        &#39;102803_ctg1_2188_-_ctg1_2188&#39;,
-                        &#39;102803_ctg1_6588_-_ctg1_6588&#39;,
-                        &#39;102803_ctg1_5688_-_ctg1_5688&#39;,
-                        &#39;102803_ctg1_6988_-_ctg1_6988&#39;,
-                        &#39;102803_ctg1_5788_-_ctg1_5788&#39;,
-                        &#39;102803_ctg1_3188_-_ctg1_3188&#39;,
-                        &#39;102803_ctg1_8788_-_ctg1_8788&#39;,
-                        &#39;102803_ctg1_8189_-_ctg1_8189&#39;,
-                        &#39;102803_ctg1_1788_-_ctg1_1788&#39;,
-                        &#39;102803_ctg1_7188_-_ctg1_7188&#39;,
-                        &#39;102803_ctg1_8999_-_ctg1_8999_home&#39;,
-                        &#39;102803_ctg1_8998_-_ctg1_8998&#39;,
-                        &#39;102803_ctg1_8997_-_ctg1_8997&#39;,
-                        &#39;102803_ctg1_9999_-_ctg1_9999&#39;,
-                        &#39;102803_ctg1_8899_-_ctg1_8899&#39;,
-                        &#39;102803_ctg1_8799_-_ctg1_8799&#39;,
-                        &#39;102803_ctg1_8698_-_ctg1_8698&#39;) THEN &#39;remen&#39;
-           WHEN fid IN (&#39;231159&#39;,
-                        &#39;231159_video_tag_1&#39;,
-                        &#39;231159_video_tag_2&#39;,
-                        &#39;231159_video_tag_14&#39;,
-                        &#39;231159_video_tag_15&#39;,
-                        &#39;231159_video_tag_3&#39;,
-                        &#39;231159_video_tag_4&#39;,
-                        &#39;231159_video_tag_5&#39;,
-                        &#39;231159_video_tag_7&#39;,
-                        &#39;231159_video_tag_8&#39;,
-                        &#39;231159_video_tag_16&#39;) THEN &#39;shipin&#39;
-           ELSE NULL
-       END AS TYPE
-FROM weibo_lite_ods1
-WHERE dt = &#39;${day}&#39;
-  AND action = &#39;2353&#39;)t1
-GROUP BY fid, TYPE)t2)t3
-WHERE rn &lt;= 5
-&quot;</code></pre>
+       <span class="kw">CASE</span>
+           <span class="kw">WHEN</span> ((fid <span class="kw">LIKE</span> <span class="st">&#39;10001%&#39;</span>
+                  <span class="kw">OR</span> fid <span class="kw">LIKE</span> <span class="st">&#39;10009%&#39;</span>
+                  <span class="kw">OR</span> fid <span class="kw">LIKE</span> <span class="st">&#39;10010%&#39;</span>
+                  <span class="kw">OR</span> fid <span class="kw">LIKE</span> <span class="st">&#39;10013%&#39;</span>
+                  <span class="kw">OR</span> fid = <span class="st">&#39;friend_timeline&#39;</span>)
+                 <span class="kw">AND</span> uicode = <span class="st">&#39;10000613&#39;</span>) <span class="kw">THEN</span> <span class="st">&#39;guanzhu&#39;</span>
+           <span class="kw">WHEN</span> fid <span class="kw">IN</span> (<span class="st">&#39;102803&#39;</span>,
+                        <span class="st">&#39;same_city&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_7968_-_ctg1_7968&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_4388_-_ctg1_4388&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_1988_-_ctg1_1988&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_4288_-_ctg1_4288&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_4188_-_ctg1_4188&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_5088_-_ctg1_5088&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_1388_-_ctg1_1388&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_2288_-_ctg1_2288&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_5188_-_ctg1_5188&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_3288_-_ctg1_3288&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_4888_-_ctg1_4888&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_6288_-_ctg1_6288&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_2088_-_ctg1_2088&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_1288_-_ctg1_1288&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_5288_-_ctg1_5288&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_2388_-_ctg1_2388&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_6688_-_ctg1_6688&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_6388_-_ctg1_6388&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_6788_-_ctg1_6788&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_2688_-_ctg1_2688&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_4988_-_ctg1_4988&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_2488_-_ctg1_2488&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_4588_-_ctg1_4588&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_1488_-_ctg1_1488&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_5988_-_ctg1_5988&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_4788_-_ctg1_4788&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_4688_-_ctg1_4688&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_1588_-_ctg1_1588&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_2788_-_ctg1_2788&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_4488_-_ctg1_4488&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_7388_-_ctg1_7388&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_7088_-_ctg1_7088&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_5388_-_ctg1_5388&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_2588_-_ctg1_2588&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_5488_-_ctg1_5488&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_1688_-_ctg1_1688&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_5888_-_ctg1_5888&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_5588_-_ctg1_5588&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_6488_-_ctg1_6488&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_2188_-_ctg1_2188&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_6588_-_ctg1_6588&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_5688_-_ctg1_5688&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_6988_-_ctg1_6988&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_5788_-_ctg1_5788&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_3188_-_ctg1_3188&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_8788_-_ctg1_8788&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_8189_-_ctg1_8189&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_1788_-_ctg1_1788&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_7188_-_ctg1_7188&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_8999_-_ctg1_8999_home&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_8998_-_ctg1_8998&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_8997_-_ctg1_8997&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_9999_-_ctg1_9999&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_8899_-_ctg1_8899&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_8799_-_ctg1_8799&#39;</span>,
+                        <span class="st">&#39;102803_ctg1_8698_-_ctg1_8698&#39;</span>) <span class="kw">THEN</span> <span class="st">&#39;remen&#39;</span>
+           <span class="kw">WHEN</span> fid <span class="kw">IN</span> (<span class="st">&#39;231159&#39;</span>,
+                        <span class="st">&#39;231159_video_tag_1&#39;</span>,
+                        <span class="st">&#39;231159_video_tag_2&#39;</span>,
+                        <span class="st">&#39;231159_video_tag_14&#39;</span>,
+                        <span class="st">&#39;231159_video_tag_15&#39;</span>,
+                        <span class="st">&#39;231159_video_tag_3&#39;</span>,
+                        <span class="st">&#39;231159_video_tag_4&#39;</span>,
+                        <span class="st">&#39;231159_video_tag_5&#39;</span>,
+                        <span class="st">&#39;231159_video_tag_7&#39;</span>,
+                        <span class="st">&#39;231159_video_tag_8&#39;</span>,
+                        <span class="st">&#39;231159_video_tag_16&#39;</span>) <span class="kw">THEN</span> <span class="st">&#39;shipin&#39;</span>
+           <span class="kw">ELSE</span> <span class="kw">NULL</span>
+       <span class="kw">END</span> <span class="kw">AS</span> <span class="kw">TYPE</span>
+<span class="kw">FROM</span> weibo_lite_ods1
+<span class="kw">WHERE</span> dt = <span class="st">&#39;${day}&#39;</span>
+  <span class="kw">AND</span> action = <span class="st">&#39;2353&#39;</span>)t1
+<span class="kw">GROUP</span> <span class="kw">BY</span> fid, <span class="kw">TYPE</span>)t2)t3
+<span class="kw">WHERE</span> rn &lt;= <span class="dv">5</span>
+<span class="ot">&quot;</span></code></pre></div>
 </div>
 <div id="fid" class="section level2">
-<h2><span class="header-section-number">3.3</span> 极速版FID</h2>
-<div id="section-3.3.1" class="section level3">
-<h3><span class="header-section-number">3.3.1</span> 关注</h3>
+<h2><span class="header-section-number">3.4</span> 极速版FID</h2>
+<div id="section-3.4.1" class="section level3">
+<h3><span class="header-section-number">3.4.1</span> 关注</h3>
 <table>
 <thead>
 <tr class="header">
@@ -670,8 +828,8 @@ WHERE rn &lt;= 5
 </tbody>
 </table>
 </div>
-<div id="section-3.3.2" class="section level3">
-<h3><span class="header-section-number">3.3.2</span> 热门</h3>
+<div id="section-3.4.2" class="section level3">
+<h3><span class="header-section-number">3.4.2</span> 热门</h3>
 <table>
 <thead>
 <tr class="header">
@@ -915,8 +1073,8 @@ WHERE rn &lt;= 5
 </tbody>
 </table>
 </div>
-<div id="section-3.3.3" class="section level3">
-<h3><span class="header-section-number">3.3.3</span> 视频</h3>
+<div id="section-3.4.3" class="section level3">
+<h3><span class="header-section-number">3.4.3</span> 视频</h3>
 <table>
 <thead>
 <tr class="header">
@@ -972,13 +1130,13 @@ WHERE rn &lt;= 5
 </tbody>
 </table>
 </div>
-<div id="section-3.3.4" class="section level3">
-<h3><span class="header-section-number">3.3.4</span> 页面</h3>
+<div id="section-3.4.4" class="section level3">
+<h3><span class="header-section-number">3.4.4</span> 页面</h3>
 <p>具体页面再用container_id区分： 1. 极速版的关注流、热门流、附近流、小视频是同一个页面，故都采用uicode=10000613 2. 所有正文页：uicode=10000617 3. 搜索页：uicode=10000620 4. 访客流多信息流：uicode=10000660 5. 公共的channel页面（找人 话题 榜单）：uicode=10000661</p>
 </div>
 </div>
 <div id="action" class="section level2">
-<h2><span class="header-section-number">3.4</span> 极速版action</h2>
+<h2><span class="header-section-number">3.5</span> 极速版action</h2>
 <table style="width:100%;">
 <colgroup>
 <col width="18%" />
@@ -1232,8 +1390,8 @@ WHERE rn &lt;= 5
 </tbody>
 </table>
 </div>
-<div id="section-3.5" class="section level2">
-<h2><span class="header-section-number">3.5</span> 极速版互动（转评赞）</h2>
+<div id="section-3.6" class="section level2">
+<h2><span class="header-section-number">3.6</span> 极速版互动（转评赞）</h2>
 <div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> <span class="fu">count</span>(a.uid),
        a.fid
 <span class="kw">FROM</span> (
