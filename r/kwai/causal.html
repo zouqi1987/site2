@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="邹奇" />
+  <title>因果推断及应用概述</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="causal_files/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+
+<link rel="stylesheet" href="causal_files/reveal.js-3.3.0.1/css/theme/night.css" id="theme">
+
+<style type="text/css">
+.reveal section img {
+  background: rgba(255, 255, 255, 0.85);
+}
+</style>
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    <script src="causal_files/header-attrs-2.3/header-attrs.js"></script>
+    <link href="causal_files/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+    <link href="causal_files/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">因果推断及应用概述</h1>
+    <h2 class="author">邹奇</h2>
+</section>
+
+<section id="credit" class="slide level2">
+<h2>Credit</h2>
+<ul>
+<li class="fragment">本次分享借鉴了大量数据分析部wiki的内容</li>
+<li class="fragment">经济学家团队在快手中学有系列教程</li>
+</ul>
+</section>
+<section>
+<section id="什么是因果推断" class="title-slide slide level1">
+<h1>什么是因果推断</h1>
+
+</section>
+<section id="因果vs相关" class="slide level2">
+<h2>因果vs相关</h2>
+<ul>
+<li class="fragment">因果推断(causal inference)能够解释某个因素(treatment)如何导致观测对象（例如用户）的结果（outcome) 发生变化。</li>
+<li class="fragment">相关性分析(correlation analysis)则体现一个因素的变化和观测对象的结果变化的相关性。</li>
+</ul>
+</section></section>
+<section>
+<section id="冰激凌与死亡率" class="title-slide slide level1">
+<h1>冰激凌与死亡率</h1>
+
+</section>
+<section id="section" class="slide level2" data-background="./ice.gif">
+<h2 data-background="./ice.gif"></h2>
+</section>
+<section id="吃的越多死的越快" class="slide level2">
+<h2>吃的越多死的越快</h2>
+<p><img src="causal_files/figure-revealjs/unnamed-chunk-1-1.png" width="1152" style="display: block; margin: auto;" /></p>
+</section>
+<section id="吃冰激凌真的会死么" class="slide level2">
+<h2>吃冰激凌真的会死么？</h2>
+<center>
+<img data-src="img1.png" />
+</center>
+</section>
+<section id="为什么更关心因果" class="slide level2">
+<h2>为什么更关心因果</h2>
+<p>业务场景</p>
+<ul>
+<li class="fragment">昨天: vivo 内容输出项目去年就上线了，我们如何评估这个项目对主站收益影响</li>
+</ul>
+<ul>
+<li class="fragment">今天: 一个实验渗透率极低，且渗透样本有偏，不符合正太分布，如何评价效果</li>
+</ul>
+<ul>
+<li class="fragment">明天: 我们推荐算法对快手的社交生态会产生怎样的影响</li>
+</ul>
+<p>这些问题当中我们不仅关心事件的<span style="color:orange;">相关性</span>, 更重要的是<span style="color:red;">因果性</span></p>
+</section></section>
+<section>
+<section id="医院与健康" class="title-slide slide level1">
+<h1>医院与健康</h1>
+
+</section>
+<section id="不去医院更健康" class="slide level2">
+<h2>不去医院更健康</h2>
+<p>过去12个月内你是否住过院？</p>
+<p><small>1-5；1:excellent, 5:poor</small></p>
+<table>
+<thead>
+<tr class="header">
+<th>分组</th>
+<th>样本量</th>
+<th>平均健康状态</th>
+<th>Std. Error</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>住过院</td>
+<td>7774</td>
+<td>2.79</td>
+<td>0.014</td>
+</tr>
+<tr class="even">
+<td>没住过院</td>
+<td>90049</td>
+<td>2.07</td>
+<td>0.003</td>
+</tr>
+</tbody>
+</table>
+<p>结果说明去过医院会使你的健康状态下滑</p>
+</section>
+<section id="问题描述" class="slide level2">
+<h2>问题描述</h2>
+<p>医院治疗: <span class="math inline">\(D_i=\{0,1\}\)</span> <br/> <span class="math inline">\(i\)</span> 的健康状况: <span class="math inline">\(Y_i\)</span> <br/> 问题：<span class="math inline">\(D_i \rightarrow Y_i\)</span> 之前的医院治疗是否会影响到现在的健康状况</p>
+<center>
+<img data-src="img2.png" />
+</center>
+<p><span class="math inline">\(Y_{1i}-Y_{0i}\)</span> 就是我们想要知道的因果关系</p>
+<p><span style="color:red;">但是，在我们这个宇宙，<span class="math inline">\(Y_{1i}\)</span> 和 <span class="math inline">\(Y_{0i}\)</span> 无法被同时观测到</span></p>
+</section>
+<section id="天真算法" class="slide level2">
+<h2>天真算法</h2>
+<p>我们无法观测某个人的两种treatment的反馈，但我们可以观测一群人的</p>
+<center>
+<img data-src="img3.png" />
+</center>
+<p><small><span class="math inline">\(E[Y_{1i}|D_i=1]-E[Y_{0i}|D_i=1]\)</span> : 住院的人的健康水平与这波人<span style="color:red;">假如没有住院的话</span>的健康水平的差异</small></p>
+<p><small><span class="math inline">\(E[Y_{0i}|D_i=1]-E[Y_{0i}|D_i=0]\)</span> : 住院的人<span style="color:red;">假如没有住院的话</span>的健康水平与没有住院的人的健康水平的差异</small></p>
+</section>
+<section id="随机分配" class="slide level2">
+<h2>随机分配</h2>
+<p>假如分组是随机的</p>
+<ul>
+<li class="fragment">使得实验组的人和控制组的人在没有实验的情况下平均反馈都是一样的<span class="math display">\[E[Y_{0i}|D_i=1]=E[Y_{0i}|D_i=0]\]</span></li>
+</ul>
+<ul>
+<li class="fragment">selection bias <span style="color:red;">消失了</span></li>
+</ul>
+</section>
+<section id="nice" class="slide level2" data-background="./nice.gif">
+<h2 data-background="./nice.gif"><span style="color:black; font-size:88px">NICE!!!</span></h2>
+</section>
+<section id="随机的局限" class="slide level2">
+<h2>随机的局限</h2>
+<p>虽然随机分配实验可以消除选择性差异，但他并不是万能的</p>
+<ul>
+<li class="fragment">我们无法随机分配住院的人，从而形成无偏的实验组和对照组，没病的人不会去住院</li>
+</ul>
+<ul>
+<li class="fragment">吸烟对肺癌的影响，我们无法随机选取对象让他们吸烟</li>
+</ul>
+</section></section>
+<section>
+<section id="因果推断的方法" class="title-slide slide level1">
+<h1>因果推断的方法</h1>
+
+</section>
+<section id="常用方法" class="slide level2">
+<h2>常用方法</h2>
+<ul>
+<li class="fragment">随机试验(A/B testing)</li>
+<li class="fragment">双重差分(difference-in-difference)</li>
+<li class="fragment">匹配(matching)</li>
+<li class="fragment"><span style="color:red;">合成控制(synthetic control)</span></li>
+<li class="fragment">矩阵补全(matrix completion)</li>
+<li class="fragment">基于决策树和随机森林的heterogeneous treatment effect (HTE)</li>
+</ul>
+</section>
+<section id="合成控制" class="slide level2">
+<h2>合成控制</h2>
+<p>synthetic control 是一种估计因果效用的方法，一般是通过加权平均多个 control 组来拟合一条和 target 组在treatment（政策）实施之前非常相近的曲线，如下图所示，虚线是多个 control 组的加权平均而得到的曲线，从而我们认为如果没有 treatment 的介入，target组的趋势应该会按照虚线进行下去。</p>
+</section>
+<section id="synthetic-control" class="slide level2">
+<h2>Synthetic Control</h2>
+<center>
+<img data-src="img5.png" />
+</center>
+</section></section>
+<section>
+<section id="synthetic-control-实现" class="title-slide slide level1">
+<h1>Synthetic Control 实现</h1>
+
+</section>
+<section id="causalimpact-in-r-by-google" class="slide level2">
+<h2>CausalImpact in R by Google</h2>
+<p>Given a response time series (e.g., clicks) and a set of control time series (e.g., clicks in non-affected markets or clicks on other sites), the package constructs a <a href="https://research.google/pubs/pub41854/">Bayesian structural time-series model</a>. This model is then used to try and predict the counterfactual, i.e., how the response metric would have evolved after the intervention if the intervention had never occurred.</p>
+</section>
+<section id="kwai-应用" class="slide level2">
+<h2>Kwai 应用</h2>
+<p><a href="https://docs.corp.kuaishou.com/d/home/fcABGWu5T60Q7kTl7AuJH7CYH">内容输出与主站贡献</a></p>
+<style type="text/css">
+  .reveal p {
+    text-align: left;
+  }
+  .reveal ul {
+    display: block;
+  }
+  .reveal ol {
+    display: block;
+  }
+</style>
+</section></section>
+    </div>
+  </div>
+
+  <script src="causal_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="causal_files/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: true,
+        // Opens links in an iframe preview overlay
+        previewLinks: true,
+        // Transition style
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+
+
+        chalkboard: {
+        },
+
+        keyboard: {
+          67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+          66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+          46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+           8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+          68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'causal_files/reveal.js-3.3.0.1/plugin/zoom-js/zoom.js', async: true },
+          { src: 'causal_files/reveal.js-3.3.0.1/plugin/chalkboard/chalkboard.js', async: true },
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "causal_files/mathjax-local/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>
