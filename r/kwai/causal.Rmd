@@ -163,7 +163,8 @@ Given a response time series (e.g., clicks) and a set of control time series (e.
 
 ## Kwai 应用
 
-<a href="https://docs.corp.kuaishou.com/d/home/fcABGWu5T60Q7kTl7AuJH7CYH" target="_blank">内容输出与主站贡献</a>
+[内容输出与主站贡献](https://docs.corp.kuaishou.com/d/home/fcABGWu5T60Q7kTl7AuJH7CYH){target="_blank"}
+
 
 
 <style type="text/css">
