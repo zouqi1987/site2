@@ -18,8 +18,8 @@ output:
 
 ## Credit
 
-> - 本次分享借鉴了大量数据分析部wiki的内容
-> - 经济学家团队在快手中学有系列教程
+> - 本次分享借鉴了大量 DA wiki的内容
+> - 经济学家团队在中学有系列教程
 
 # 什么是因果推断
 
@@ -63,7 +63,7 @@ ggplot(df, aes(x=x, y=y/1000)) +
 
 > - 今天: 一个实验渗透率极低，且渗透样本有偏，不符合正太分布，如何评价效果
 
-> - 明天: 我们推荐算法对快手的社交生态会产生怎样的影响
+> - 明天: 我们推荐算法对社交生态会产生怎样的影响
 
 这些问题当中我们不仅关心事件的<span style="color:orange;" >相关性</span>, 更重要的是<span style="color:red;" >因果性</span>
 
@@ -163,7 +163,7 @@ Given a response time series (e.g., clicks) and a set of control time series (e.
 
 ## Kwai 应用
 
-[内容输出与主站贡献](https://docs.corp.kuaishou.com/d/home/fcABGWu5T60Q7kTl7AuJH7CYH){target="_blank"}
+内容输出与主站贡献
 
 
 
